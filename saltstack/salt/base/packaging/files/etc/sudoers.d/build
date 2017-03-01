@@ -1,0 +1,2 @@
+%build localhost = (root) NOPASSWD: SETENV: /usr/bin/makechrootpkg
+%build localhost = (root) NOPASSWD: /usr/bin/arch-nspawn
