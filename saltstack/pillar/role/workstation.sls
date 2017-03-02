@@ -12,3 +12,4 @@ users:
       - users
       - video
       - wheel
+    kubeadm_user: True
