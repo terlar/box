@@ -7,7 +7,7 @@ packaging_packages:
       - reflector
       - repose
 
-/etc/sudoers.d/build:
+/etc/sudoers.d/50-build:
   file.managed:
     - user: root
     - group: root

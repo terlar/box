@@ -1,2 +1,3 @@
-%build localhost = (root) NOPASSWD: SETENV: /usr/bin/makechrootpkg
-%build localhost = (root) NOPASSWD: /usr/bin/arch-nspawn
+Defaults:pkgs !authenticate
+%build ALL = (root) NOPASSWD: SETENV: /usr/bin/makechrootpkg
+%build ALL = (root) NOPASSWD: /usr/bin/arch-nspawn, /usr/bin/pacman -Sy, /usr/bin/pacman -Fy

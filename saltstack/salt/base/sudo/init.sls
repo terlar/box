@@ -1,7 +1,7 @@
 sudo:
   pkg.installed
 
-/etc/sudoers.d/wheel:
+/etc/sudoers.d/00-wheel:
   file.managed:
     - user: root
     - group: root
