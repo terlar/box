@@ -2,7 +2,9 @@ packaging_packages:
   pkg.installed:
     - pkgs:
       - devtools
+      - downgrader
       - findutils
+      - pacutils
       - pkgfile
       - reflector
       - repose
@@ -35,24 +37,13 @@ checkout_pkgbuilds:
     - require:
       - pkg: git
 
-create_custom_repo_dir:
-  file.directory:
-    - name: /var/cache/pacman/custom
-    - user: pkgs
-    - group: pkgs
-    - dir_mode: 775
-    - file_mode: 664
-    - recurse:
-      - user
-      - group
-
 initialize_custom_repo:
   cmd.run:
-    - name: repo-add /var/cache/pacman/custom/custom.db.tar.gz
+    - name: repose -r /home/pkgs -fv custom
     - runas: pkgs
     - creates:
-      - /var/cache/pacman/custom/custom.db
-      - /var/cache/pacman/custom/custom.files
+      - /home/pkgs/custom.db
+      - /home/pkgs/custom.files
 
 add_custom_repo_config:
   file.managed:
