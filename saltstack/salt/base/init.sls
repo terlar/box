@@ -3,6 +3,7 @@ refresh_packages:
     - refresh: True
 
 include:
+  - .swap
   - .network
   - .shell
   - .sudo
