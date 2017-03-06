@@ -2,10 +2,21 @@ include:
   - docker
 
 kubernetes:
-  pkg.installed
+  pkg.installed:
+    - require:
+      - pkg: docker
 
 kubernetes-helm:
   pkg.installed
+
+# Configure kubelet to use kubeadm.
+kubelet kubeadm config:
+  file.managed:
+    - name: /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+    - user: root
+    - group: root
+    - mode: 664
+    - source: salt://kubernetes/files/etc/systemd/system/kubelet.service.d/kubeadm.conf
 
 kubelet:
   service.running:
@@ -13,16 +24,13 @@ kubelet:
     - reload: True
     - watch:
       - pkg: kubernetes
-      - file: /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+      - file: kubelet kubeadm config
 
-/etc/systemd/system/kubelet.service.d/10-kubeadm.conf:
-  file.managed:
-    - user: root
-    - group: root
-    - mode: 664
-    - source: salt://kubernetes/files/etc/systemd/system/kubelet.service.d/kubeadm.conf
-
-initialize_kubeadm:
+# Initialize kubeadm
+# Skip the preflight checks due to an issue where it complains if the
+# kubelet server is not started, but if it is started it complains about
+# the port being used etc.
+kubeadm initialization:
   cmd.run:
     - name: kubeadm init --skip-preflight-checks
     - creates:
@@ -35,14 +43,16 @@ initialize_kubeadm:
     - require:
       - service: kubelet
 
-install_kubernetes_network:
+# Setup the network to use for the kubernetes cluster.
+kubernetes network:
   cmd.run:
     - name: kubectl --kubeconfig /etc/kubernetes/admin.conf apply -f https://git.io/weave-kube
     - unless: kubectl --namespace kube-system get pod -l name=weave-net -o name | grep pod/
     - require:
       - service: kubelet
 
-allow_kubernetes_pods_on_master:
+# Allow running pods on master, since we run a one node cluster.
+kubernetes allow pods on master:
   cmd.run:
     - name: kubectl --kubeconfig /etc/kubernetes/admin.conf taint nodes --all dedicated-
     - unless: kubectl --namespace kube-system describe nodes | egrep 'Taints:\s+<none>'
@@ -54,7 +64,8 @@ allow_kubernetes_pods_on_master:
 {%- set current = salt.user.info(name) -%}
 {%- set home = current.get('home', "/home/%s" % name) -%}
 {%- set gid = current.get('gid') -%}
-kubernetes_config_for_{{ name }}_user:
+# Copy configuration to users local kubernetes config.
+kubernetes config for user {{ name }}:
   file.copy:
     - name: {{ home }}/.kube/config
     - source: /etc/kubernetes/admin.conf
@@ -62,12 +73,15 @@ kubernetes_config_for_{{ name }}_user:
     - group: {{ gid }}
     - require:
       - service: kubelet
+      - cmd: kubeadm initialization
 
-initialize_helm:
+# Initialize helm for both user and server.
+kubernetes-helm initialization:
   cmd.run:
     - name: helm init --kube-context admin@kubernetes
     - unless: helm version --server
     - runas: {{ name }}
     - require:
-      - file: kubernetes_config_for_{{ name }}_user
+      - service: kubelet
+      - file: kubernetes config for user {{ name }}
 {% endfor %}
