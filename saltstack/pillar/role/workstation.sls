@@ -12,4 +12,8 @@ users:
       - users
       - video
       - wheel
+    dotfiles:
+      source: https://github.com/terlar/dotfiles.git
+      target: /home/terje/src/github.com/terlar/dotfiles
+      init_cmd: make install
     kubeadm_user: True
