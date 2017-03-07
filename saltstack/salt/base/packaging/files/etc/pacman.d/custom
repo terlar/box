@@ -1,8 +1,0 @@
-[options]
-CacheDir = /var/cache/pacman/pkg
-CacheDir = /home/pkgs
-CleanMethod = KeepCurrent
-
-[custom]
-SigLevel = Optional TrustAll
-Server = file:///home/pkgs

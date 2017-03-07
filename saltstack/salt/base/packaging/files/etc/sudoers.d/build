@@ -1,3 +1,4 @@
 Defaults:pkgs !authenticate
 %build ALL = (root) NOPASSWD: SETENV: /usr/bin/makechrootpkg
-%build ALL = (root) NOPASSWD: /usr/bin/mkarchroot, /usr/bin/arch-nspawn, /usr/bin/pacman -Sy, /usr/bin/pacman -Fy
+%build ALL = (root) NOPASSWD: /usr/bin/arch-nspawn, /usr/bin/pacman -Sy, /usr/bin/pacman -Fy
+%build ALL = (root) NOPASSWD: /usr/bin/pacman -Sy --config=/etc/pacman.d/repos, /usr/bin/pacman -Fy --config=/etc/pacman.d/repos
