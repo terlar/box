@@ -7,13 +7,20 @@ PILLAR_ROOT := ./pillar/
 setup:
 	sudo salt-call --local grains.setval roles [workstation]
 
+.PHONY: apply
+apply:
+	sudo salt-call --local \
+		--file-root=$(FILE_ROOT) \
+		--pillar-root=$(PILLAR_ROOT) \
+		--output=highstate --state-output=changes \
+		state.sls $(STATE)
+
 .PHONY: install
 install:
 	sudo salt-call --local \
 		--file-root=$(FILE_ROOT) \
 		--pillar-root=$(PILLAR_ROOT) \
 		--output=highstate --state-output=changes \
-		--log-level=quiet \
 		state.highstate
 
 .PHONY: test
