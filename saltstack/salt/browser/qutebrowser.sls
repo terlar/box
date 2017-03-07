@@ -1,0 +1,2 @@
+qutebrowser:
+  pkg.installed

@@ -1,0 +1,2 @@
+remacs:
+  pkg.installed

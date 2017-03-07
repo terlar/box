@@ -1,0 +1,2 @@
+st:
+  pkg.installed

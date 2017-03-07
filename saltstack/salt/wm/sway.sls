@@ -1,0 +1,2 @@
+sway:
+  pkg.installed

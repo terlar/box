@@ -28,3 +28,18 @@ repos:
   - hardware
   - media
   - terminal
+
+editors:
+  - neovim
+  - remacs
+
+terminals:
+  - termite
+  - st
+
+wms:
+  - xmonad
+
+browsers:
+  - chromium
+  - qutebrowser

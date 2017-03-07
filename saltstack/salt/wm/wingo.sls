@@ -1,0 +1,2 @@
+wingo:
+  pkg.installed
