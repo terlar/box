@@ -6,6 +6,7 @@ users:
       - audio
       - build
       - docker
+      - lp
       - lpadmin
       - scanner
       - tty
