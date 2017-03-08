@@ -13,10 +13,10 @@ kubernetes-helm:
 kubelet_kubeadm_config:
   file.managed:
     - name: /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+    - source: salt://kubernetes/files/etc/systemd/system/kubelet.service.d/kubeadm.conf
     - user: root
     - group: root
     - mode: 664
-    - source: salt://kubernetes/files/etc/systemd/system/kubelet.service.d/kubeadm.conf
 
 kubelet:
   service.running:
@@ -32,7 +32,7 @@ kubelet:
 # the port being used etc.
 kubeadm_initialization:
   cmd.run:
-    - name: kubeadm init --skip-preflight-checks
+    - name: kubeadm init --skip-preflight-checks --pod-network-cidr 10.244.0.0/16
     - creates:
       - /etc/kubernetes/manifests
       - /etc/kubernetes/pki
@@ -45,17 +45,24 @@ kubeadm_initialization:
 
 # Setup the network to use for the kubernetes cluster.
 kubernetes_network:
+  file.managed:
+    - name: /etc/kubernetes/kube-flannel.yml
+    - source: salt://kubernetes/files/etc/kubernetes/kube-flannel.yml
+    - user: root
+    - group: root
+    - mode: 664
   cmd.run:
-    - name: kubectl --kubeconfig /etc/kubernetes/admin.conf apply -f https://git.io/weave-kube
-    - unless: kubectl --namespace kube-system get pod -l name=weave-net -o name | grep pod/
+    - name: kubectl --kubeconfig /etc/kubernetes/admin.conf --namespace kube-system apply -f /etc/kubernetes/kube-flannel.yml
+    - unless: kubectl --kubeconfig /etc/kubernetes/admin.conf --namespace kube-system get pod -l app=flannel -o name | grep pod/
     - require:
+      - file: kubernetes_network
       - cmd: kubeadm_initialization
 
 # Allow running pods on master, since we run a one node cluster.
 kubernetes_allow_pods_on_master:
   cmd.run:
     - name: kubectl --kubeconfig /etc/kubernetes/admin.conf taint nodes --all dedicated-
-    - unless: kubectl --namespace kube-system describe nodes | egrep 'Taints:\s+<none>'
+    - unless: kubectl --kubeconfig /etc/kubernetes/admin.conf --namespace kube-system describe nodes | egrep 'Taints:\s+<none>'
     - require:
       - cmd: kubeadm_initialization
 
@@ -64,6 +71,12 @@ kubernetes_allow_pods_on_master:
 {%- set current = salt.user.info(name) -%}
 {%- set home = current.get('home', "/home/%s" % name) -%}
 {%- set gid = current.get('gid') -%}
+remove_outdated_kubernetes_config_for_user_{{ name }}:
+  cmd.run:
+    - name: rm  {{ home }}/.kube/config
+    - onchanges:
+      - cmd: kubeadm_initialization
+
 # Copy configuration to users local kubernetes config.
 kubernetes_config_for_user_{{ name }}:
   file.copy:
@@ -81,5 +94,7 @@ kubernetes-helm_initialization:
     - unless: helm version --server
     - runas: {{ name }}
     - require:
+      - cmd: kubeadm_initialization
+      - cmd: kubernetes_network
       - file: kubernetes_config_for_user_{{ name }}
 {% endfor %}
