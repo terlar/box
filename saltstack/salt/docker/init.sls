@@ -12,7 +12,14 @@ docker-compose:
 
 /etc/systemd/system/docker.service.d/override.conf:
   file.managed:
+    - source: salt://docker/files/etc/systemd/system/docker.service.d/override.conf
     - user: root
     - group: root
     - mode: 664
-    - source: salt://docker/files/etc/systemd/system/docker.service.d/override.conf
+
+/etc/systemd/system/docker.service.d/dns.conf:
+  file.managed:
+    - source: salt://docker/files/etc/systemd/system/docker.service.d/dns.conf
+    - user: root
+    - group: root
+    - mode: 664
