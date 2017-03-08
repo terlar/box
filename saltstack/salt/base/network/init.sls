@@ -1,6 +1,8 @@
+{% if not salt['pillar.get']('dnsmasq:enabled', False) %}
 /etc/resolv.conf:
   file.symlink:
     - target: /run/systemd/resolve/resolv.conf
+{% endif %}
 
 systemd-resolved:
   service.running:
@@ -15,6 +17,9 @@ systemd-networkd:
 include:
   - .wired
   - .wireless
+{% if salt['pillar.get']('dnsmasq:enabled', False) %}
+  - .dnsmasq
+{% endif %}
 
 /usr/lib/systemd/system/wait-for-dns.service:
   file.managed:

@@ -54,5 +54,8 @@ fonts:
   - ttf-symbola
   - ttf-tibetan-machine
 
+dnsmasq:
+  enabled: True
+
 journal:
   max_size: 16M
