@@ -45,5 +45,14 @@ browsers:
   - chromium
   - qutebrowser
 
+fonts:
+  - ttf-dejavu
+  - ttf-freefont
+  - ttf-indic-otf
+  - ttf-liberation
+  - ttf-linux-libertine
+  - ttf-symbola
+  - ttf-tibetan-machine
+
 journal:
   max_size: 16M
