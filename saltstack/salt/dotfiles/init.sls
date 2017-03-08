@@ -8,7 +8,7 @@ stow:
 {%- set home = current.get('home', "/home/%s" % name) -%}
 {%- set target = dotfiles.get('target', "%s/.dotfiles" % home) -%}
 
-dotfiles_for_{{ name }}_user:
+dotfiles_repo_for_{{ name }}_user:
   git.latest:
     - name: {{ dotfiles.source }}
     - target: {{ target }}
@@ -23,7 +23,7 @@ initialize_dotfiles_for_{{ name }}_user:
     - name: {{ dotfiles.init_cmd }}
     - cwd: {{ target }}
     - runas: {{ name }}
-    - require:
-      - git: dotfiles_for_{{ name }}_user
+    - onchanges:
+      - git: dotfiles_repo_for_{{ name }}_user
 {%- endif %}
 {% endfor %}

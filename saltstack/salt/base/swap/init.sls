@@ -7,7 +7,7 @@ systemd-swap:
       - pkg: systemd-swap
       - ini: /etc/systemd/swap.conf
 
-enable_zram:
+swap_enable_zram:
   ini.options_present:
     - name: /etc/systemd/swap.conf
     - sections:

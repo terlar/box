@@ -3,7 +3,7 @@ include:
 
 # Local packages include:
 # cower, downgrader
-packaging tools:
+packaging_tools:
   pkg.installed:
     - pkgs:
       - cower
@@ -23,7 +23,7 @@ packaging tools:
     - group: root
     - mode: 755
 
-build sudo file:
+build_group_sudo:
   file.managed:
     - name: /etc/sudoers.d/50-build
     - source: salt://base/packaging/files/etc/sudoers.d/build
@@ -34,7 +34,7 @@ build sudo file:
     - require:
       - pkg: sudo
 
-pkgs user:
+pkgs_user:
   user.present:
     - name: pkgs
     - shell: /sbin/nologin
@@ -42,25 +42,25 @@ pkgs user:
     - uid: 9000
     - gid: build
 
-pkgbuilds repo for pkgs user:
+pkgbuilds:
   git.latest:
     - name: https://github.com/terlar/pkgbuilds.git
     - target: /home/pkgs/.pkgbuilds
     - user: pkgs
     - require:
       - pkg: git
-      - user: pkgs user
+      - user: pkgs_user
 
-/etc/pacman.d/repos:
+pacman_repo_config:
   file.managed:
+    - name: /etc/pacman.d/repos
     - source: salt://base/packaging/files/etc/pacman.d/repos.jinja
     - user: root
     - group: root
     - mode: 644
     - template: jinja
-
-/etc/pacman.conf:
   ini.options_present:
+    - name: /etc/pacman.conf
     - sections:
         Include: /etc/pacman.d/repos
 
@@ -75,7 +75,7 @@ pkgbuilds repo for pkgs user:
       - user
       - group
 
-initialize {{ repo }} pacman repo:
+{{ repo }}_pacman_repo:
   cmd.run:
     - name: repo-add -q /home/pkgs/{{ repo }}/{{ repo }}.db.tar.gz
     - runas: pkgs
@@ -87,17 +87,17 @@ initialize {{ repo }} pacman repo:
 {% endfor %}
 
 {% set pacman_conf = '/home/pkgs/.pacman.conf' %}
-{%- set makepkg_conf = "/usr/share/devtools/makepkg-%s.conf" % grains['cpuarch'] -%}
-{%- set chroot_container = "/home/pkgs/.build-chroot/%s" % grains['cpuarch'] -%}
+{% set makepkg_conf = "/usr/share/devtools/makepkg-%s.conf" % grains['cpuarch'] %}
+{% set chroot_container = "/home/pkgs/.build-chroot/%s" % grains['cpuarch'] %}
 
-chroot pacman config:
+chroot_pacman_config:
   cmd.run:
     - name: pacconf --raw > {{ pacman_conf }}
     - runas: pkgs
     - onchanges:
-      - file: /etc/pacman.d/repos
+      - file: pacman_repo_config
 
-chroot container:
+chroot_container:
   file.directory:
     - name: {{ chroot_container }}
     - user: pkgs
@@ -106,7 +106,7 @@ chroot container:
     - file_mode: 664
     - makedirs: True
 
-create chroot:
+chroot:
   cmd.run:
     - shell: /bin/bash
     - name: |
@@ -114,8 +114,8 @@ create chroot:
         mkarchroot -C {{ pacman_conf }} -M {{ makepkg_conf }} \
         {{ chroot_container }}/root base-devel
     - require:
-      - cmd: chroot pacman config
-      - file: chroot container
+      - cmd: chroot_pacman_config
+      - file: chroot_container
     - onchanges:
-      - file: /etc/pacman.d/repos
-      - file: chroot container
+      - file: pacman_repo_config
+      - file: chroot_container

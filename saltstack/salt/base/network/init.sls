@@ -1,4 +1,4 @@
-install_network_packages:
+network_packages:
   pkg.installed:
     - pkgs:
       - rsync

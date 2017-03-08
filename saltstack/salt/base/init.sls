@@ -1,4 +1,4 @@
-refresh_packages:
+update_all_packages:
   pkg.uptodate:
     - refresh: True
 

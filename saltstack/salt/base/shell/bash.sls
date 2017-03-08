@@ -1,5 +1,6 @@
 bash:
   pkg.installed
 
-bash-completion:
-  pkg.installed
+bash_completions:
+  pkg.installed:
+    - name: bash-completion
