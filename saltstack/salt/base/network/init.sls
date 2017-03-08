@@ -1,9 +1,6 @@
-/etc/systemd/network/ipforward.network:
-  file.managed:
-    - source: salt://base/network/files/etc/systemd/network/ipforward.network
-    - user: root
-    - group: root
-    - mode: 664
+/etc/resolv.conf:
+  file.symlink:
+    - target: /run/systemd/resolve/resolv.conf
 
 systemd-resolved:
   service.running:
@@ -16,7 +13,6 @@ systemd-networkd:
     - reload: True
 
 include:
-  - .dnsmasq
   - .wired
   - .wireless
 

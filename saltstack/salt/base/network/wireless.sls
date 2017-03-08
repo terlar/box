@@ -27,11 +27,13 @@ wpa_supplicant@{{ interface }}:
     - reload: True
 
 /etc/wpa_supplicant/wpa_supplicant-{{ interface }}.conf:
-  ini.options_present:
-    - sections:
-        ctrl_interface: DIR=/run/wpa_supplicant GROUP=wheel
-        update_config: 1
-        fast_reauth: 1
-        ap_scan: 1
+  file.prepend:
+    - text:
+        - ctrl_interface=/run/wpa_supplicant
+        - ctrl_interface_group=wheel
+        - update_config=1
+        - eapol_version=1
+        - ap_scan=1
+        - fast_reauth=1
 {% endif %}
 {% endfor %}
