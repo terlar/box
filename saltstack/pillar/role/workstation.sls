@@ -43,3 +43,6 @@ wms:
 browsers:
   - chromium
   - qutebrowser
+
+journal:
+  max_size: 16M
