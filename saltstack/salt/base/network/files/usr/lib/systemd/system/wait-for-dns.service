@@ -1,0 +1,7 @@
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/bin/sh -c 'while ! getent ahosts index.docker.io >dev/null; do sleep 1; done'
+
+[Install]
+WantedBy=network-online.target
