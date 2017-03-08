@@ -1,2 +1,3 @@
 remacs:
-  pkg.installed
+  pkg.installed:
+    - name: remacs-git
