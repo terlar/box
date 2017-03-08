@@ -10,4 +10,5 @@ include:
   - .git
   - .users
   - .packaging
+  - .archival
   - .journal
