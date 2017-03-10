@@ -13,6 +13,7 @@ dotfiles_repo_for_{{ name }}_user:
     - name: {{ dotfiles.source }}
     - target: {{ target }}
     - user: {{ name }}
+    - update_head: False
     - submodules: True
     - require:
       - pkg: git
