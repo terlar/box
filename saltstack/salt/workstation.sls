@@ -3,6 +3,7 @@ include:
   - dotfiles
   - editor
   - terminal
+  - fonts
   - wm
   - browser
   - docker
