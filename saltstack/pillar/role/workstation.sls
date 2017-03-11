@@ -62,5 +62,14 @@ fonts:
 dnsmasq:
   enabled: True
 
+bluetooth:
+  enabled: True
+
+docker:
+  enabled: True
+
+kubernetes:
+  enabled: False
+
 journal:
   max_size: 16M
