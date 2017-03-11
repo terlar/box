@@ -39,10 +39,11 @@ editors:
   - remacs
 
 terminals:
-  - termite
   - st
+  - termite
 
 wms:
+  - sway
   - xmonad
 
 browsers:
