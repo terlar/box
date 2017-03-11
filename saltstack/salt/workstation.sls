@@ -6,6 +6,7 @@ include:
   - fonts
   - wm
   - browser
+  - cm
 {% if salt['pillar.get']('bluetooth:enabled', False) %}
   - bluetooth
 {% endif %}

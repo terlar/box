@@ -59,6 +59,10 @@ fonts:
   - ttf-symbola
   - ttf-tibetan-machine
 
+cm:
+  - ansible
+  - salt
+
 dnsmasq:
   enabled: True
 
