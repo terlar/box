@@ -3,6 +3,7 @@ update_all_packages:
     - refresh: True
 
 include:
+  - .hostname
   - .swap
   - .network
   - .shell

@@ -1,3 +1,6 @@
+hostname: horse
+domain: farm
+
 users:
   terje:
     fullname: Terje Larsen
