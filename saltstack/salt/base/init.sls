@@ -3,6 +3,7 @@ update_all_packages:
     - refresh: True
 
 include:
+  - .timezone
   - .hostname
   - .swap
   - .network
