@@ -72,6 +72,11 @@ cm:
   - ansible
   - salt
 
+filesystems:
+  - exfat
+  - ext
+  - ntfs
+
 dnsmasq:
   enabled: True
 
