@@ -7,6 +7,7 @@ include:
   - .hostname
   - .swap
   - .network
+  - .udisks
   - .shell
   - .sudo
   - .git
