@@ -18,7 +18,6 @@ bluetooth_module:
 bluetooth:
   service.running:
     - enable: True
-    - reload: True
     - watch:
       - pkg: bluez
     - require:

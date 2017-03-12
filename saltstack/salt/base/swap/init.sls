@@ -2,7 +2,6 @@ systemd-swap:
   pkg.installed: []
   service.running:
     - enable: True
-    - reload: True
     - watch:
       - pkg: systemd-swap
       - ini: /etc/systemd/swap.conf

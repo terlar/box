@@ -21,7 +21,6 @@ kubelet_kubeadm_config:
 kubelet:
   service.running:
     - enable: True
-    - reload: True
     - watch:
       - pkg: kubernetes
       - file: kubelet_kubeadm_config

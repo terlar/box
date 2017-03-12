@@ -7,12 +7,10 @@
 systemd-resolved:
   service.running:
     - enable: True
-    - reload: True
 
 systemd-networkd:
   service.running:
     - enable: True
-    - reload: True
 
 include:
   - .wired
@@ -31,7 +29,6 @@ include:
 wait-for-dns:
   service.running:
     - enable: True
-    - reload: True
     - watch:
       - file: /usr/lib/systemd/system/wait-for-dns.service
 

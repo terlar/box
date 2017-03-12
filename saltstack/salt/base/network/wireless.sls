@@ -24,7 +24,6 @@ wpa_supplicant:
 wpa_supplicant@{{ interface }}:
   service.running:
     - enable: True
-    - reload: True
 
 /etc/wpa_supplicant/wpa_supplicant-{{ interface }}.conf:
   file.prepend:

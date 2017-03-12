@@ -2,7 +2,6 @@ docker:
   pkg.installed: []
   service.running:
     - enable: True
-    - reload: True
     - watch:
       - pkg: docker
       - file: /etc/systemd/system/docker.service.d/override.conf

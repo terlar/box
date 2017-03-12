@@ -2,7 +2,6 @@ udisks2:
   pkg.installed: []
   service.running:
     - enable: True
-    - reload: True
     - watch:
       - pkg: udisks2
     - require:
