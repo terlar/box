@@ -5,6 +5,7 @@ update_all_packages:
 include:
   - vcs/git
   - .timezone
+  - .ntp
   - .hostname
   - .swap
   - .network
