@@ -1,5 +1,5 @@
-{%- set hostname = pillar.get('hostname') -%}
-{%- set domain = pillar.get('domain', 'localdomain') -%}
+{%- set hostname = salt['pillar.get']('hostname') -%}
+{%- set domain = salt['pillar.get']('domain', 'localdomain') -%}
 
 /etc/hostname:
   file.managed:

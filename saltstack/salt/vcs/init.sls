@@ -1,6 +1,6 @@
-{%- if pillar.get('vcs') %}
+{%- if salt['pillar.get']('vcs') %}
 include:
-{% for system in pillar.get('vcs', []) %}
+{% for system in salt['pillar.get']('vcs', []) %}
   - .{{ system }}
 {%- endfor %}
 {%- endif %}

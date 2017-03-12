@@ -3,9 +3,9 @@ xorg-server:
     - name: xorg-server
     - name: xorg-server-utils
 
-{%- if pillar.get('wms') %}
+{%- if salt['pillar.get']('wms') %}
 include:
-{% for wm in pillar.get('wms', []) %}
+{% for wm in salt['pillar.get']('wms', []) %}
   - .{{ wm }}
 {%- endfor %}
 {%- endif %}

@@ -1,6 +1,6 @@
-{%- if pillar.get('cm') %}
+{%- if salt['pillar.get']('cm') %}
 include:
-{% for tool in pillar.get('cm', []) %}
+{% for tool in salt['pillar.get']('cm', []) %}
   - .{{ tool }}
 {%- endfor %}
 {%- endif %}

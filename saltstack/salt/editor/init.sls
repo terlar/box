@@ -1,6 +1,6 @@
-{%- if pillar.get('editors') %}
+{%- if salt['pillar.get']('editors') %}
 include:
-{% for editor in pillar.get('editors', []) %}
+{% for editor in salt['pillar.get']('editors', []) %}
   - .{{ editor }}
 {%- endfor %}
 {%- endif %}

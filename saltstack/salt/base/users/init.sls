@@ -1,4 +1,4 @@
-{% for name, user in pillar.get('users', {}).items() %}
+{% for name, user in salt['pillar.get']('users', {}).items() %}
 {%- set current = salt.user.info(name) -%}
 {%- set home = user.get('home', current.get('home', "/home/%s" % name)) -%}
 

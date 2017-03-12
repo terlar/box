@@ -64,7 +64,7 @@ pacman_repo_config:
     - sections:
         Include: /etc/pacman.d/repos
 
-{% for repo in pillar.get('repos', []) %}
+{% for repo in salt['pillar.get']('repos', []) %}
 /home/pkgs/{{ repo }}:
   file.directory:
     - user: pkgs

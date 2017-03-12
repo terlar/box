@@ -1,8 +1,8 @@
-{%- if pillar.get('fonts') %}
+{%- if salt['pillar.get']('fonts') %}
 font_packages:
   pkg.installed:
     - pkgs:
-{% for font in pillar.get('fonts', []) %}
+{% for font in salt['pillar.get']('fonts', []) %}
       - {{ font }}
 {%- endfor %}
 {%- endif %}

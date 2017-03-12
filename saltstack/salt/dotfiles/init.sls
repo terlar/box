@@ -1,7 +1,7 @@
 stow:
   pkg.installed
 
-{% for name, user in pillar.get('users', {}).items()
+{% for name, user in salt['pillar.get']('users', {}).items()
         if user.dotfiles is defined %}
 {%- set dotfiles = user.dotfiles -%}
 {%- set current = salt.user.info(name) -%}

@@ -1,6 +1,6 @@
-{%- if pillar.get('browsers') %}
+{%- if salt['pillar.get']('browsers') %}
 include:
-{% for browser in pillar.get('browsers', []) %}
+{% for browser in salt['pillar.get']('browsers', []) %}
   - .{{ browser }}
 {%- endfor %}
 {%- endif %}
