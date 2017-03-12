@@ -59,6 +59,10 @@ fonts:
   - ttf-symbola
   - ttf-tibetan-machine
 
+vcs:
+  - git
+  - mercurial
+
 cm:
   - ansible
   - salt

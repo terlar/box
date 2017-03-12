@@ -3,6 +3,7 @@ update_all_packages:
     - refresh: True
 
 include:
+  - vcs/git
   - .timezone
   - .hostname
   - .swap
@@ -10,7 +11,6 @@ include:
   - .udisks
   - .shell
   - .sudo
-  - .git
   - .users
   - .packaging
   - .archival

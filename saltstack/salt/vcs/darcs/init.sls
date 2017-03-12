@@ -1,0 +1,2 @@
+darcs:
+  pkg.installed
