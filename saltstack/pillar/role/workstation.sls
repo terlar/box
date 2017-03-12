@@ -75,6 +75,12 @@ cm:
 dnsmasq:
   enabled: True
 
+sound:
+  enabled: True
+  features:
+    - dlna
+    - raop
+
 bluetooth:
   enabled: True
 
