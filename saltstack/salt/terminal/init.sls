@@ -3,4 +3,7 @@ include:
 {% for term in salt['pillar.get']('terminals', []) %}
   - .{{ term }}
 {%- endfor %}
+{% for wm in salt['pillar.get']('terminal:wms', []) %}
+  - .wm.{{ wm }}
+{%- endfor %}
 {%- endif %}

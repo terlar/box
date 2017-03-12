@@ -42,6 +42,11 @@ terminals:
   - st
   - termite
 
+terminal:
+  wms:
+    - dvtm
+    - tmux
+
 wms:
   - sway
   - xmonad
