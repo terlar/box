@@ -10,6 +10,7 @@ include:
   - .swap
   - .network
   - .udisks
+  - .kmscon
   - .shell
   - .sudo
   - .users
