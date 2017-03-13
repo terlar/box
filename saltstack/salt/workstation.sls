@@ -8,6 +8,7 @@ include:
   - wm
   - browser
   - cm
+  - dev
 {% if salt['pillar.get']('sound:enabled', False) %}
   - sound
 {% endif %}

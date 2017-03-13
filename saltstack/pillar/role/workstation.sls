@@ -42,11 +42,6 @@ terminals:
   - st
   - termite
 
-terminal:
-  wms:
-    - dvtm
-    - tmux
-
 wms:
   - sway
   - xmonad
@@ -71,6 +66,73 @@ vcs:
 cm:
   - ansible
   - salt
+
+dev:
+  languages:
+    - bash
+    - elixir
+    - erlang
+    - go
+    - haskell
+    - java
+    - javascript
+    - python
+    - ruby
+    - rust
+    - web
+  packages:
+    - aws-cli
+    - ctags
+    - exercism-cli
+    - ftjam
+    - gdb
+    - http-prompt
+    - httpie
+    - jq
+    - mosh
+    - mycli
+    - plantuml
+    - tmate
+    - vagrant
+    - vegeta
+    - virtualbox
+
+terminal:
+  packages:
+    - arch-wiki-lite
+    - asciinema
+    - calc
+    - canto-curses
+    - cdrtools
+    - cmatrix
+    - exa-git
+    - figlet
+    - fzf
+    - grc
+    - icat
+    - khal
+    - libqalculate
+    - mange
+    - mlocate
+    - moc
+    - most
+    - ncmpcpp
+    - progress
+    - pv
+    - pwgen
+    - pygmentize
+    - ranger
+    - reptyr
+    - rlwrap
+    - translate-shell
+    - tree
+    - units
+    - w3m
+    - weechat
+    - yank
+  wms:
+    - dvtm
+    - tmux
 
 filesystems:
   - exfat

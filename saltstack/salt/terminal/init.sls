@@ -7,3 +7,12 @@ include:
   - .wm.{{ wm }}
 {%- endfor %}
 {%- endif %}
+
+{%- if salt['pillar.get']('terminal:packages') %}
+terminal_packages:
+  pkg.installed:
+    - pkgs:
+{% for pkg in salt['pillar.get']('terminal:packages', []) %}
+      - {{ pkg }}
+{%- endfor %}
+{%- endif %}
