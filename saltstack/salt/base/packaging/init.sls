@@ -77,13 +77,11 @@ pacman_repo_config:
 
 {{ repo }}_pacman_repo:
   cmd.run:
-    - name: repo-add -q /home/pkgs/{{ repo }}/{{ repo }}.db.tar.gz
+    - name: repose -r /home/pkgs/{{ repo }} -zfv {{ repo }}
     - runas: pkgs
     - creates:
       - /home/pkgs/{{ repo }}/{{ repo }}.db
-      - /home/pkgs/{{ repo }}/{{ repo }}.db.tar.gz
       - /home/pkgs/{{ repo }}/{{ repo }}.files
-      - /home/pkgs/{{ repo }}/{{ repo }}.files.tar.gz
 {% endfor %}
 
 {% set pacman_conf = '/home/pkgs/.pacman.conf' %}
