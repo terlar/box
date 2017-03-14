@@ -134,6 +134,13 @@ terminal:
     - dvtm
     - tmux
 
+passwordless_sudo:
+  - /usr/bin/pacman -Syu
+  - /usr/bin/systemctl daemon-reload
+  - /usr/bin/systemctl start *
+  - /usr/bin/systemctl restart *
+  - /usr/bin/systemctl stop *
+
 filesystems:
   - exfat
   - ext

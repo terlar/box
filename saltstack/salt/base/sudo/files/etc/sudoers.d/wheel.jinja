@@ -1,0 +1,4 @@
+%wheel ALL = (ALL) ALL
+{% for entry in passwordless_commands %}
+%wheel ALL = (ALL) NOPASSWD: {{ entry }}
+{%- endfor %}
