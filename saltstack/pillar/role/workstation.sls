@@ -150,6 +150,7 @@ sound:
 
 bluetooth:
   enabled: True
+  auto_enable: True
 
 docker:
   enabled: True
