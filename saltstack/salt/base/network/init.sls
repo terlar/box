@@ -1,4 +1,4 @@
-{% if not salt['pillar.get']('dnsmasq:enabled', False) %}
+{% if not 'dnsmasq' in salt['pillar.get']('network:features', []) %}
 /etc/resolv.conf:
   file.symlink:
     - target: /run/systemd/resolve/resolv.conf
@@ -15,8 +15,11 @@ systemd-networkd:
 include:
   - .wired
   - .wireless
-{% if salt['pillar.get']('dnsmasq:enabled', False) %}
+{% if 'dnsmasq' in salt['pillar.get']('network:features', []) %}
   - .dnsmasq
+{% endif %}
+{% if 'zero-conf' in salt['pillar.get']('network:features', []) %}
+  - .zero-conf
 {% endif %}
 
 /usr/lib/systemd/system/wait-for-dns.service:
@@ -32,9 +35,11 @@ wait-for-dns:
     - watch:
       - file: /usr/lib/systemd/system/wait-for-dns.service
 
-network_tools:
+{%- if salt['pillar.get']('network:packages') %}
+network_packages:
   pkg.installed:
     - pkgs:
-      - rsync
-      - lftp
-      - curl
+{% for pkg in salt['pillar.get']('network:packages', []) %}
+      - {{ pkg }}
+{%- endfor %}
+{%- endif %}

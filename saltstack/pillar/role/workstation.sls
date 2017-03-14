@@ -97,6 +97,25 @@ dev:
     - vegeta
     - virtualbox
 
+network:
+  features:
+    - dnsmasq
+    - zero-conf
+  packages:
+    - bind-tools
+    - ca-certificates
+    - curl
+    - gnu-netcat
+    - lftp
+    - net-tools
+    - openssh
+    - openssl
+    - rsync
+    - socat
+    - tcpdump
+    - traceroute
+    - whois
+
 terminal:
   packages:
     - arch-wiki-lite
@@ -145,9 +164,6 @@ filesystems:
   - exfat
   - ext
   - ntfs
-
-dnsmasq:
-  enabled: True
 
 sound:
   enabled: True
