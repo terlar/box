@@ -59,6 +59,8 @@ pacman_repo_config:
     - group: root
     - mode: 644
     - template: jinja
+    - defaults:
+        repos: {{ salt['pillar.get']('repos', []) }}
   ini.options_present:
     - name: /etc/pacman.conf
     - sections:

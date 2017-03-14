@@ -1,10 +1,10 @@
 [options]
 CleanMethod = KeepCurrent
 CacheDir = /var/cache/pacman/pkg
-{%- for repo in salt['pillar.get']('repos', []) %}
+{%- for repo in repos %}
 CacheDir = /home/pkgs/{{ repo }}
 {%- endfor %}
-{% for repo in salt['pillar.get']('repos', []) %}
+{% for repo in repos %}
 [{{ repo }}]
 SigLevel = Optional TrustAll
 Server = file:///home/pkgs/{{ repo }}

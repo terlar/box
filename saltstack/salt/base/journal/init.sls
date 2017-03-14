@@ -15,3 +15,5 @@
     - group: root
     - mode: 664
     - template: jinja
+    - defaults:
+        max_size: {{ salt['pillar.get']('journal:max_size', '256M') }}
