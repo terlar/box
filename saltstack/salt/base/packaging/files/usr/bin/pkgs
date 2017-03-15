@@ -11,7 +11,7 @@ main() {
 	repodir="/home/${usr}"
 	repo_pacconf="/etc/pacman.d/repos"
 
-	local repos="" pkgs=""
+	local repos="" pkgs="" skip=""
 	local tasks=() vars=()
 
 	tasks+=(update)
@@ -21,7 +21,7 @@ main() {
 	vars+=(REPODIR="${repodir}")
 	vars+=(REPO_PACCONF="${repo_pacconf}")
 
-	while getopts :p:r:cv opt
+	while getopts :p:r:s:cv opt
 	do
 		case "${opt}" in
 			p)
@@ -38,6 +38,14 @@ main() {
 					repos="REPOS=${OPTARG}"
 				else
 					repos+=",${OPTARG}"
+				fi
+				;;
+			s)
+				if [[ -z "${skip}" ]]
+				then
+					skip="SKIP=${OPTARG}"
+				else
+					skip+=",${OPTARG}"
 				fi
 				;;
 			c)
@@ -60,6 +68,7 @@ main() {
 
 	[[ -n "${pkgs}" ]]  && vars+=("${pkgs}")
 	[[ -n "${repos}" ]] && vars+=("${repos}")
+	[[ -n "${skip}" ]] && vars+=("${skip}")
 
 	tasks+=(build)
 
