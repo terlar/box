@@ -1,0 +1,48 @@
+user:
+  name: terje
+  uid: 1000
+  group: terje
+  shell: /usr/bin/fish
+  email: terlar@gmail.com
+
+hostname: ah
+
+dotfiles:
+  url: git@github.com:terlar/dotfiles.git
+
+aur:
+  dir: aur
+  packages:
+    - aurget
+    - downgrade
+
+editors:
+  - emacs
+  - nvim
+
+base_packages:
+  - base-devel
+  - tmux
+  - git
+  - gnupg
+  - rsync
+  - glances
+  - coreutils
+  - pass
+  - reflector
+  - bc
+  - ranger
+  - sysdig
+  - lsof
+  - arch-wiki-lite
+  - tig
+  - ruby
+  - pv
+  - minicom
+  - jq
+
+filesystem_packages:
+  - dosfstools
+  - hfsprogs
+  - ntfs-3g
+  - exfat-utils
