@@ -67,6 +67,24 @@ cm:
   - ansible
   - salt
 
+packages:
+  - aspell
+  - aspell-en
+  - aspell-sv
+  - cryptsetup
+  - ddrescue
+  - dropbox
+  - foremost
+  - mopidy
+  - mpc
+  - pass
+  - playpen
+  - ripgrep
+  - tmsu
+  - vdirsyncer
+  - xcape
+  - youtube-dl
+
 dev:
   languages:
     - bash
@@ -96,6 +114,88 @@ dev:
     - vagrant
     - vegeta
     - virtualbox
+
+doc_packages:
+  - antiword
+  - calibre
+  - pandoc
+  - pdfgrep
+  - sigil
+  - unrtf
+  - xsv
+  - zathura
+  - zathura-pdf-poppler
+
+gui_packages:
+  - arandr
+  - arc-solid-gtk-theme
+  - autopass-git
+  - autorandr-git
+  - baobab
+  - cheese
+  - compton
+  - darktable
+  - deluge
+  - editorconfig-core-c
+  - feh
+  - filelight
+  - font-manager
+  - gcolor2
+  - gnome-themes-standard
+  - goldendict
+  - gpicview
+  - i3lock
+  - ibus
+  - ibus-m17n
+  - libreoffice-fresh
+  - lightdm
+  - lightdm-gtk-greeter
+  - lxrandr
+  - meld
+  - mpv
+  - nautilus
+  - numix-gtk-theme
+  - pavucontrol
+  - pidgin
+  - pidgin-libnotify
+  - pinta
+  - redshift
+  - rofi
+  - rofi-surfraw-git
+  - scrot
+  - shotwell
+  - shutter
+  - slack-desktop
+  - spotify
+  - spread0r
+  - xcalib
+  - xclip
+  - xcompmgr
+  - xdg-utils
+  - xdotool
+  - xfce4-notifyd
+  - xorg-utils
+  - xorg-xkill
+  - xsel
+  - zenity
+  - zim
+
+monitor_packages:
+  - cpupower
+  - dfc
+  - glancing
+  - htop
+  - httping
+  - iftop
+  - iotop
+  - lshw
+  - lsof
+  - mtr
+  - ncdu
+  - perf
+  - powertop
+  - sysdig
+  - usbutils
 
 network:
   features:
@@ -153,12 +253,28 @@ terminal:
     - dvtm
     - tmux
 
+hardware:
+  # Apple Cinema Display Control Utility
+  - acdcontrol-git
+  - cups
+  - epson-inkjet-printer-stylus-photo-px810fw-series
+  - gutenprint
+  - ifuse
+  - joyutils
+  - opensc
+  - xf86-input-mtrack-git
+  - xf86-video-intel
+  - yubikey-neo-manager-git
+  - yubikey-personalization-gui
+
 passwordless_sudo:
   - /usr/bin/pacman -Syu
   - /usr/bin/systemctl daemon-reload
   - /usr/bin/systemctl start *
   - /usr/bin/systemctl restart *
   - /usr/bin/systemctl stop *
+
+bootloader: systemd-boot
 
 filesystems:
   - exfat
