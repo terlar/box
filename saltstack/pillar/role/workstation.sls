@@ -131,6 +131,7 @@ terminal:
     - grc
     - icat
     - khal
+    - lastpass-cli
     - libqalculate
     - mlocate
     - moc
