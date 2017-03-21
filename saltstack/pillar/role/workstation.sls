@@ -133,7 +133,6 @@ terminal:
     - icat
     - khal
     - libqalculate
-    - mange
     - mlocate
     - moc
     - most
@@ -145,6 +144,7 @@ terminal:
     - ranger
     - reptyr
     - rlwrap
+    - tabview
     - translate-shell
     - tree
     - units
