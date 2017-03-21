@@ -2,6 +2,7 @@
 
 FILE_ROOT   := ./salt/
 PILLAR_ROOT := ./pillar/
+LOG_LEVEL   := warning
 
 SALT := sudo salt-call --local \
 	--file-root=$(FILE_ROOT) --pillar-root=$(PILLAR_ROOT) \
@@ -17,7 +18,7 @@ apply:
 
 .PHONY: install
 install:
-	$(SALT) state.highstate
+	$(SALT) --log-level=$(LOG_LEVEL) state.highstate
 
 .PHONY: test
 test:
