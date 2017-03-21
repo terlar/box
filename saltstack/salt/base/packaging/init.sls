@@ -1,14 +1,10 @@
 include:
   - base.sudo
 
-# Local packages include:
-# cower, downgrader
 packaging_tools:
   pkg.installed:
     - pkgs:
-      - cower
       - devtools
-      - downgrader
       - findutils
       - pacutils
       - pkgbuild-introspection
@@ -34,6 +30,13 @@ build_group_sudo:
     - require:
       - pkg: sudo
 
+
+/home/pkgs:
+  file.directory:
+    - user: pkgs
+    - group: build
+    - mode: 770
+
 pkgs_user:
   user.present:
     - name: pkgs
@@ -48,7 +51,6 @@ pkgbuilds:
     - target: /home/pkgs/.pkgbuilds
     - user: pkgs
     - require:
-      - pkg: git
       - user: pkgs_user
 
 pacman_repo_config:
@@ -84,6 +86,8 @@ pacman_repo_config:
     - creates:
       - /home/pkgs/{{ repo }}/{{ repo }}.db
       - /home/pkgs/{{ repo }}/{{ repo }}.files
+    - require:
+      - pkg: packaging_tools
 {% endfor %}
 
 {% set pacman_conf = '/home/pkgs/.pacman.conf' %}
@@ -94,8 +98,8 @@ chroot_pacman_config:
   cmd.run:
     - name: pacconf --raw > {{ pacman_conf }}
     - runas: pkgs
-    - onchanges:
-      - file: pacman_repo_config
+    - creates:
+      - {{ pacman_conf }}
 
 chroot_container:
   file.directory:
@@ -117,5 +121,12 @@ chroot:
       - cmd: chroot_pacman_config
       - file: chroot_container
     - onchanges:
+      - cmd: chroot_pacman_config
       - file: pacman_repo_config
       - file: chroot_container
+
+packaging_local_packages:
+  pkg.installed:
+    - pkgs:
+      - cower
+      - downgrader
