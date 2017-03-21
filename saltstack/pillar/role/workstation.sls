@@ -116,6 +116,7 @@ network:
 
 terminal:
   packages:
+    - antiword
     - arch-wiki-lite
     - asciinema
     - calc
@@ -133,6 +134,8 @@ terminal:
     - moc
     - most
     - ncmpcpp
+    - pandoc
+    - pdfgrep
     - progress
     - pv
     - pwgen
@@ -194,7 +197,6 @@ gui:
     - rofi-surfraw-git
     - scrot
     - shotwell
-    - shutter
     - sigil
     - slack-desktop
     - spotify
