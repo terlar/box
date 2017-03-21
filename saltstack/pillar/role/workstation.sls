@@ -123,7 +123,6 @@ terminal:
     - arch-wiki-lite
     - asciinema
     - calc
-    - canto-curses
     - cdrtools
     - cmatrix
     - exa-git
