@@ -91,11 +91,13 @@ dev:
     - jq
     - mosh
     - mycli
+    - packer-io
     - plantuml
     - tmate
     - vagrant
     - vegeta
     - virtualbox
+    - wercker-cli
 
 network:
   features:
