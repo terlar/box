@@ -42,10 +42,6 @@ terminals:
   - st
   - termite
 
-wms:
-  - sway
-  - xmonad
-
 browsers:
   - chromium
   - qutebrowser
@@ -148,12 +144,77 @@ terminal:
     - translate-shell
     - tree
     - units
+    - unrtf
     - w3m
     - weechat
+    - xsv
     - yank
   wms:
     - dvtm
     - tmux
+
+gui:
+  enabled: True
+  packages:
+    - arandr
+    - arc-solid-gtk-theme
+    - autopass-git
+    - autorandr-git
+    - baobab
+    - calibre
+    - cheese
+    - compton
+    - darktable
+    - deluge
+    - editorconfig-core-c
+    - feh
+    - filelight
+    - font-manager
+    - gcolor2
+    - gnome-themes-standard
+    - goldendict
+    - gpicview
+    - i3lock
+    - ibus
+    - ibus-m17n
+    - libreoffice-fresh
+    - lightdm
+    - lightdm-gtk-greeter
+    - lxrandr
+    - meld
+    - mpv
+    - nautilus
+    - numix-gtk-theme
+    - pavucontrol
+    - pidgin
+    - pidgin-libnotify
+    - pinta
+    - redshift
+    - rofi
+    - rofi-surfraw-git
+    - scrot
+    - shotwell
+    - shutter
+    - sigil
+    - slack-desktop
+    - spotify
+    - spread0r
+    - xcalib
+    - xclip
+    - xcompmgr
+    - xdg-utils
+    - xdotool
+    - xfce4-notifyd
+    - xorg-utils
+    - xorg-xkill
+    - xsel
+    - zathura
+    - zathura-pdf-poppler
+    - zenity
+    - zim
+  wms:
+    - sway
+    - xmonad
 
 passwordless_sudo:
   - /usr/bin/pacman -Syu
