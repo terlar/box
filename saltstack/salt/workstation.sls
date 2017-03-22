@@ -4,6 +4,7 @@ include:
   - editor
   - terminal
   - email
+  - calendar
   - fonts
   - browser
   - spell

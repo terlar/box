@@ -133,7 +133,6 @@ terminal:
     - fzf
     - grc
     - icat
-    - khal
     - lastpass-cli
     - libqalculate
     - mlocate
