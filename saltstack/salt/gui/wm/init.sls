@@ -7,6 +7,7 @@ x_packages:
       - arandr
       - autorandr-git
       - xcalib
+      - xcape
       - xclip
       - xcompmgr
       - xdg-utils
