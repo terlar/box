@@ -34,6 +34,8 @@ repos:
   - media
   - terminal
 
+grep: ripgrep
+
 editors:
   - neovim
   - remacs

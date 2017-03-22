@@ -1,0 +1,2 @@
+grep:
+  pkg.installed
