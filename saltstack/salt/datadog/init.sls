@@ -9,6 +9,8 @@ datadog_user:
     - shell: /sbin/nologin
     - home: /opt/datadog-agent
     - system: True
+    - groups:
+      - docker
 
 /opt/datadog-agent/setup_agent.sh:
   file.managed:
@@ -41,3 +43,11 @@ datadog-agent:
     - enable: True
     - watch:
       - file: /usr/lib/systemd/system/datadog-agent.service
+      - file: /opt/datadog-agent/agent/conf.d/docker_daemon.yaml
+
+/opt/datadog-agent/agent/conf.d/docker_daemon.yaml:
+  file.managed:
+    - source: salt://datadog/files/opt/datadog-agent/agent/conf.d/docker_daemon.yaml
+    - user: dd-agent
+    - group: dd-agent
+    - mode: 664
