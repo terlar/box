@@ -6,6 +6,7 @@ include:
   - email
   - fonts
   - browser
+  - spell
   - cm
   - dev
 {% if salt['pillar.get']('gui:enabled', False) %}

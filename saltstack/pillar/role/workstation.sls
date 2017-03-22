@@ -1,6 +1,8 @@
 hostname: horse
 domain: farm
 timezone: Europe/Stockholm
+languages:
+  - sv
 
 users:
   terje:
