@@ -133,6 +133,7 @@ terminal:
     - mlocate
     - moc
     - most
+    - mux
     - ncmpcpp
     - pandoc
     - pdfgrep
@@ -210,6 +211,7 @@ gui:
     - xorg-utils
     - xorg-xkill
     - xsel
+    - youtube-dl
     - zathura
     - zathura-pdf-poppler
     - zenity
