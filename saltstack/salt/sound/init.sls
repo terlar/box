@@ -16,6 +16,13 @@ pulseaudio:
       - pulseaudio-dlna
 {% endif %}
 
+{% if salt['pillar.get']('gui:enabled', False) %}
+pulseaudio_gui_packages:
+  pkg.installed:
+    - pkgs:
+      - pavucontrol
+{% endif %}
+
 pulseaudio_switch_on_connect:
   file.append:
     - name: /etc/pulse/default.pa

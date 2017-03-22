@@ -7,8 +7,11 @@ include:
   - fonts
   - browser
   - spell
+  - media
+  - ebook
   - cm
   - dev
+  - recovery
 {% if salt['pillar.get']('gui:enabled', False) %}
   - gui
 {% endif %}

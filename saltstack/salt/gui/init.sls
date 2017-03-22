@@ -1,4 +1,5 @@
 include:
+  - .themes
   - .wm
 
 gui_packages:

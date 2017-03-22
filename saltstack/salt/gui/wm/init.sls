@@ -1,11 +1,26 @@
 xorg-server:
-  pkg.installed:
-    - name: xorg-server
-    - name: xorg-server-utils
+  pkg.installed
 
-{%- if salt['pillar.get']('wms') %}
+x_packages:
+  pkg.installed:
+    - pkgs:
+      - arandr
+      - autorandr-git
+      - xcalib
+      - xclip
+      - xcompmgr
+      - xdg-utils
+      - xdotool
+      - xfce4-notifyd
+      - xorg-server-utils
+      - xorg-utils
+      - xorg-xkill
+      - xsel
+      - zenity
+
+{%- if salt['pillar.get']('gui:wms') %}
 include:
-{% for wm in salt['pillar.get']('wms', []) %}
+{% for wm in salt['pillar.get']('gui:wms', []) %}
   - .{{ wm }}
 {%- endfor %}
 {%- endif %}

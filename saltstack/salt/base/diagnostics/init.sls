@@ -16,3 +16,11 @@ diagnostics_packages:
       - powertop
       - sysdig
       - usbutils
+
+{% if salt['pillar.get']('gui:enabled', False) %}
+diagnostics_gui_packages:
+  pkg.installed:
+    - pkgs:
+      - baobab
+      - filelight
+{% endif %}

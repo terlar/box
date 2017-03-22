@@ -83,6 +83,7 @@ dev:
   packages:
     - aws-cli
     - ctags
+    - editorconfig-core-c
     - exercism-cli
     - ftjam
     - gdb
@@ -135,11 +136,10 @@ terminal:
     - lastpass-cli
     - libqalculate
     - mlocate
-    - moc
     - most
     - mux
-    - ncmpcpp
     - pandoc
+    - pass
     - pdfgrep
     - progress
     - pv
@@ -163,62 +163,32 @@ terminal:
 
 gui:
   enabled: True
+  themes:
+    - arc-solid
+    - numix
   packages:
-    - arandr
-    - arc-solid-gtk-theme
     - autopass-git
-    - autorandr-git
-    - baobab
-    - calibre
     - cheese
-    - compton
-    - darktable
     - deluge
-    - editorconfig-core-c
-    - feh
-    - filelight
     - font-manager
     - gcolor2
-    - gnome-themes-standard
     - goldendict
-    - gpicview
     - i3lock
     - ibus
     - ibus-m17n
     - libreoffice-fresh
     - lightdm
     - lightdm-gtk-greeter
-    - lxrandr
     - meld
-    - mpv
     - nautilus
-    - numix-gtk-theme
-    - pavucontrol
     - pidgin
     - pidgin-libnotify
-    - pinta
     - redshift
     - rofi
     - rofi-surfraw-git
     - scrot
-    - shotwell
-    - sigil
     - slack-desktop
-    - spotify
     - spread0r
-    - xcalib
-    - xclip
-    - xcompmgr
-    - xdg-utils
-    - xdotool
-    - xfce4-notifyd
-    - xorg-utils
-    - xorg-xkill
-    - xsel
-    - youtube-dl
-    - zathura
-    - zathura-pdf-poppler
-    - zenity
     - zim
   wms:
     - sway
