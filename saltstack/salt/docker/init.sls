@@ -15,6 +15,7 @@ docker-compose:
     - user: root
     - group: root
     - mode: 664
+    - makedirs: True
 
 /etc/systemd/system/docker.service.d/dns.conf:
   file.managed:

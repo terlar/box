@@ -23,6 +23,7 @@ users:
       source: https://github.com/terlar/dotfiles.git
       target: /home/terje/src/github.com/terlar/dotfiles
       init_cmd: make install
+    dropbox_user: True
     kubeadm_user: True
 
 repos:
@@ -215,6 +216,9 @@ sound:
 bluetooth:
   enabled: True
   auto_enable: True
+
+dropbox:
+  enabled: True
 
 docker:
   enabled: True

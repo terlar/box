@@ -9,6 +9,7 @@ include:
   - .hostname
   - .swap
   - .network
+  - .disk_encryption
   - .udisks
   - .kmscon
   - .shell

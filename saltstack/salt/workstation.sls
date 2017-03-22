@@ -21,6 +21,9 @@ include:
 {% if salt['pillar.get']('bluetooth:enabled', False) %}
   - bluetooth
 {% endif %}
+{% if salt['pillar.get']('dropbox:enabled', False) %}
+  - dropbox
+{% endif %}
 {% if salt['pillar.get']('docker:enabled', False) %}
   - docker
 {% endif %}
