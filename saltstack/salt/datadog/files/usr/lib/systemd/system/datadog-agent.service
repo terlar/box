@@ -1,0 +1,15 @@
+[Unit]
+Description=Datadog Agent
+After=network.target
+Requires=network.target
+
+[Service]
+Type=simple
+User=dd-agent
+ExecStart=/opt/datadog-agent/bin/agent
+KillSignal=SIGINT
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

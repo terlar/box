@@ -27,3 +27,10 @@ test:
 .PHONY: test-state
 test-state:
 	$(SALT) --log-level=debug state.sls $(STATE)
+
+.PHONY: install-datadog
+install-datadog:
+ifndef DD_API_KEY
+	$(error DD_API_KEY required)
+endif
+	@$(SALT) state.sls datadog pillar="{datadog: {api_key: '$(DD_API_KEY)'}}"
