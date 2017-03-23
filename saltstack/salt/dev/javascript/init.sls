@@ -3,3 +3,12 @@ javascript_dev_packages:
     - pkgs:
       - nodejs
       - npm
+
+tern:
+  npm.installed
+
+gulp:
+  npm.installed
+
+bower:
+  npm.installed
