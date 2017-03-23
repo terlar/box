@@ -5,4 +5,4 @@ calendar_client:
 
 calendar_synchronization:
   pkg.installed:
-    - name: vdirsyncer
+    - name: vdirsyncer-git
