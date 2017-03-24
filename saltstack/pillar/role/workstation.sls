@@ -205,6 +205,7 @@ filesystems:
   - exfat
   - ext
   - ntfs
+  - tmsu
 
 sound:
   enabled: True

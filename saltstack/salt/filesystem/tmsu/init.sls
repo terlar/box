@@ -1,0 +1,2 @@
+tmsu:
+  pkg.installed
