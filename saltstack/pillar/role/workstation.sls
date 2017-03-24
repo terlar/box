@@ -25,6 +25,7 @@ users:
       init_cmd: make install
     dropbox_user: True
     kubeadm_user: True
+    rust_user: True
 
 repos:
   - base

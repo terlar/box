@@ -3,3 +3,15 @@ rust_dev_packages:
     - pkgs:
       - rust-src
       - rustup
+
+{% for name, user in salt['pillar.get']('users', {}).items()
+        if user.get('rust_user', False) %}
+{%- set current = salt.user.info(name) -%}
+{%- set home = current.get('home', "/home/%s" % name) -%}
+# Configure default toolchain
+rust_rustup_toolchain:
+  cmd.run:
+    - name: rustup default stable
+    - unless: cat ~/.rustup/settings.toml | grep default_toolchain
+    - runas: {{ name }}
+{% endfor %}

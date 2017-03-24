@@ -66,7 +66,7 @@ kubernetes_allow_pods_on_master:
       - cmd: kubeadm_initialization
 
 {% for name, user in salt['pillar.get']('users', {}).items()
-        if user.kubeadm_user is defined and user.kubeadm_user %}
+        if user.get('kubeadm_user', False) %}
 {%- set current = salt.user.info(name) -%}
 {%- set home = current.get('home', "/home/%s" % name) -%}
 {%- set gid = current.get('gid') -%}
