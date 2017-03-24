@@ -15,8 +15,9 @@ include:
   - .shell
   - .sudo
   - .users
-  - .packaging
+  - .repos
   - .grep
   - .diagnostics
   - .archival
+  - .packaging
   - .journal

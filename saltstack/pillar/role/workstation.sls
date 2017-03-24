@@ -28,15 +28,22 @@ users:
     rust_user: True
 
 repos:
-  - base
-  - communication
-  - development
-  - fonts
-  - games
-  - gui
-  - hardware
-  - media
-  - terminal
+  - name: base
+    server: https://s3.eu-central-1.amazonaws.com/yak-packages/base
+  - name: communication
+    server: https://s3.eu-central-1.amazonaws.com/yak-packages/communication
+  - name: development
+    server: https://s3.eu-central-1.amazonaws.com/yak-packages/development
+  - name: fonts
+    server: https://s3.eu-central-1.amazonaws.com/yak-packages/fonts
+  - name: gui
+    server: https://s3.eu-central-1.amazonaws.com/yak-packages/gui
+  - name: hardware
+    server: https://s3.eu-central-1.amazonaws.com/yak-packages/hardware
+  - name: media
+    server: https://s3.eu-central-1.amazonaws.com/yak-packages/media
+  - name: terminal
+    server: https://s3.eu-central-1.amazonaws.com/yak-packages/terminal
 
 grep: ripgrep
 

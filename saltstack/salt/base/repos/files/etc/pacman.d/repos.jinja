@@ -1,11 +1,8 @@
 [options]
 CleanMethod = KeepCurrent
 CacheDir = /var/cache/pacman/pkg
-{%- for repo in repos %}
-CacheDir = /home/pkgs/{{ repo }}
-{%- endfor %}
 {% for repo in repos %}
-[{{ repo }}]
+[{{ repo.name }}]
 SigLevel = Optional TrustAll
-Server = file:///home/pkgs/{{ repo }}
+Server = {{ repo.server }}
 {% endfor %}

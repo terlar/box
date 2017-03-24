@@ -53,43 +53,6 @@ pkgbuilds:
     - require:
       - user: pkgs_user
 
-pacman_repo_config:
-  file.managed:
-    - name: /etc/pacman.d/repos
-    - source: salt://base/packaging/files/etc/pacman.d/repos.jinja
-    - user: root
-    - group: root
-    - mode: 644
-    - template: jinja
-    - defaults:
-        repos: {{ salt['pillar.get']('repos', []) }}
-  ini.options_present:
-    - name: /etc/pacman.conf
-    - sections:
-        Include: /etc/pacman.d/repos
-
-{% for repo in salt['pillar.get']('repos', []) %}
-/home/pkgs/{{ repo }}:
-  file.directory:
-    - user: pkgs
-    - group: build
-    - dir_mode: 775
-    - file_mode: 664
-    - recurse:
-      - user
-      - group
-
-{{ repo }}_pacman_repo:
-  cmd.run:
-    - name: repose -r /home/pkgs/{{ repo }} -zfv {{ repo }}
-    - runas: pkgs
-    - creates:
-      - /home/pkgs/{{ repo }}/{{ repo }}.db
-      - /home/pkgs/{{ repo }}/{{ repo }}.files
-    - require:
-      - pkg: packaging_tools
-{% endfor %}
-
 {% set pacman_conf = '/home/pkgs/.pacman.conf' %}
 {% set makepkg_conf = "/usr/share/devtools/makepkg-%s.conf" % grains['cpuarch'] %}
 {% set chroot_container = "/home/pkgs/.build-chroot/%s" % grains['cpuarch'] %}
