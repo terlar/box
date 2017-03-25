@@ -4,7 +4,7 @@ FILE_ROOT   := ./salt/
 PILLAR_ROOT := ./pillar/
 LOG_LEVEL   := warning
 
-ROLES := workstation
+ROLES := console,workstation
 
 ifdef PILLAR
 PILLAR_OPT := pillar="$(PILLAR)"

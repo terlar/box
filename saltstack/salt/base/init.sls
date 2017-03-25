@@ -14,8 +14,6 @@ include:
   - .disk_encryption
   - .udisks
   - vcs/git
-  - .fonts
-  - .kmscon
   - .shell
   - .sudo
   - .users
