@@ -12,6 +12,6 @@ rust_dev_packages:
 rust_rustup_toolchain:
   cmd.run:
     - name: rustup default stable
-    - unless: cat ~/.rustup/settings.toml | grep default_toolchain
+    - unless: grep default_toolchain ~/.rustup/settings.toml
     - runas: {{ name }}
 {% endfor %}

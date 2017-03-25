@@ -5,7 +5,7 @@ nss-mdns:
   file.replace:
     - pattern: '(?<=^hosts: )(.*) (resolve \[!UNAVAIL=return\] dns)'
     - repl: \1 mdns_minimal [NOTFOUND=return] \2
-    - unless: cat /etc/nsswitch.conf | grep 'mdns_minimal \[NOTFOUND=return\]'
+    - unless: grep 'mdns_minimal \[NOTFOUND=return\]' /etc/nsswitch.conf
 
 avahi:
   pkg.installed: []
