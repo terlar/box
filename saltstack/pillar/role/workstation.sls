@@ -1,4 +1,3 @@
-hostname: horse
 domain: farm
 timezone: Europe/Stockholm
 languages:
@@ -236,6 +235,9 @@ docker:
 
 kubernetes:
   enabled: False
+
+yubikey:
+  enabled: True
 
 journal:
   max_size: 16M

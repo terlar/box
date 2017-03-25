@@ -32,3 +32,6 @@ include:
 {% if salt['pillar.get']('kubernetes:enabled', False) %}
   - kubernetes
 {% endif %}
+{% if salt['pillar.get']('yubikey:enabled', False) %}
+  - hardware/yubikey
+{% endif %}

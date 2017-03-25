@@ -4,15 +4,17 @@ update_all_packages:
 
 include:
   - .boot
-  - vcs/git
   - .timezone
   - .ntp
+{% if salt['pillar.get']('hostname') %}
   - .hostname
+{% endif %}
   - .swap
   - .network
   - .disk_encryption
   - .udisks
   - .kmscon
+  - vcs/git
   - .shell
   - .sudo
   - .users

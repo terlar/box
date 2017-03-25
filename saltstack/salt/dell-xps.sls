@@ -1,0 +1,2 @@
+include:
+  - hardware/touchpad/generic
