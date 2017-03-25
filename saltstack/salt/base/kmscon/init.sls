@@ -1,5 +1,11 @@
-kmscon:
+libtsm-patched-git:
   pkg.installed
+
+kmscon:
+  pkg.installed:
+    - name: kmscon
+    - require:
+      - pkg: libtsm-patched-git
 
 # Enable kmscon on tty1
 getty@tty1:
