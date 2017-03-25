@@ -1,4 +1,4 @@
-{%- set timezone = salt['pillar.get']('timezone', 'Europe/Berlin') -%}
+{%- set timezone = salt['pillar.get']('timezone', 'Europe/London') -%}
 
 timezone_packages:
   pkg.installed:
