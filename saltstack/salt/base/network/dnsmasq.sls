@@ -1,3 +1,7 @@
+dnsmasq_package:
+  pkg.installed:
+    - name: dnsmasq
+
 /etc/resolv.conf:
   file.managed:
     - source: salt://base/network/files/etc/resolv.conf
@@ -24,7 +28,7 @@
     - group: root
     - mode: 664
 
-dnsmasq:
-  pkg.installed: []
+dnsmasq_service:
   service.running:
+    - name: dnsmasq
     - enable: True
