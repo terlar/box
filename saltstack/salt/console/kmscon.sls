@@ -47,6 +47,7 @@ getty@tty1:
     - user: root
     - group: root
     - mode: 664
+    - makedirs: True
     - template: jinja
     - defaults:
         config: {{ salt['pillar.get']('kmscon', {}) }}
