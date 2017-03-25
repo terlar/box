@@ -13,8 +13,9 @@ include:
   - .network
   - .disk_encryption
   - .udisks
-  - .kmscon
   - vcs/git
+  - .fonts
+  - .kmscon
   - .shell
   - .sudo
   - .users
