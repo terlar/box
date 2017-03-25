@@ -1,5 +1,6 @@
 include:
   - base
+  - gnupg
   - dotfiles
   - editor
   - terminal
