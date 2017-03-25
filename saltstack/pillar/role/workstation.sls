@@ -210,6 +210,8 @@ passwordless_sudo:
   - /usr/bin/systemctl restart *
   - /usr/bin/systemctl stop *
 
+disk_encryption: True
+
 filesystems:
   - exfat
   - ext

@@ -3,6 +3,7 @@ update_all_packages:
     - refresh: True
 
 include:
+  - .boot
   - vcs/git
   - .timezone
   - .ntp
