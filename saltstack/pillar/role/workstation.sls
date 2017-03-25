@@ -197,6 +197,7 @@ gui:
     - scrot
     - slack-desktop
     - spread0r
+    - telegram-purple
     - zim
   wms:
     - sway
