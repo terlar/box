@@ -13,4 +13,6 @@ email_indexing:
 
 email_synchronization:
   pkg.installed:
-    - name: offlineimap
+    - pkgs:
+      - gmail-oauth2-tools-git
+      - offlineimap
