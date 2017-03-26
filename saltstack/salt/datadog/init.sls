@@ -14,9 +14,10 @@ datadog_user:
 
 /opt/datadog-agent/setup_agent.sh:
   file.managed:
-    - source: https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/setup_agent.sh
-    - source_hash: cbb741ef07c6b644f63d07585e71154df61bc143f194bd6b7535538e70b70f0a
+    - source: https://raw.githubusercontent.com/DataDog/dd-agent/5.12.1/packaging/datadog-agent/source/setup_agent.sh
+    - source_hash: b505da7d617ce04b1cacdd49b4048c16cf9a18ccd2093deecdb10a5fba35f1cc
     - mode: 775
+    - makedirs: True
     - runas: dd-agent
   cmd.run:
     - shell: /bin/bash
@@ -37,6 +38,9 @@ datadog_user:
     - user: root
     - group: root
     - mode: 664
+    - makedirs: True
+    - require:
+      - cmd: /opt/datadog-agent/setup_agent.sh
 
 datadog-agent:
   service.running:
@@ -44,6 +48,8 @@ datadog-agent:
     - watch:
       - file: /usr/lib/systemd/system/datadog-agent.service
       - file: /opt/datadog-agent/agent/conf.d/docker_daemon.yaml
+    - require:
+      - file: /usr/lib/systemd/system/datadog-agent.service
 
 /opt/datadog-agent/agent/conf.d/docker_daemon.yaml:
   file.managed:
@@ -51,3 +57,6 @@ datadog-agent:
     - user: dd-agent
     - group: dd-agent
     - mode: 664
+    - makedirs: True
+    - require:
+      - cmd: /opt/datadog-agent/setup_agent.sh
