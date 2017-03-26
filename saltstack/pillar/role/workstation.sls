@@ -2,6 +2,11 @@ domain: farm
 timezone: Europe/Stockholm
 languages:
   - sv
+keyboard:
+  layout: us
+  caps_ctrl: True
+  repeat_delay: 200
+  repeat_rate: 10
 
 users:
   terje:
@@ -59,6 +64,7 @@ browsers:
   - qutebrowser
 
 fonts:
+  - noto-fonts
   - ttf-dejavu
   - ttf-freefont
   - ttf-indic-otf
@@ -173,6 +179,7 @@ gui:
   themes:
     - arc-solid
     - numix
+    - paper
   packages:
     - autopass-git
     - cheese

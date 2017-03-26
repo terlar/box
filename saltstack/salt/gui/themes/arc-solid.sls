@@ -1,2 +1,5 @@
 arc-solid-gtk-theme:
-  pkg.installed
+  pkg.installed:
+    - name: arc-solid-gtk-theme
+    - require:
+      - pkg: xorg-server

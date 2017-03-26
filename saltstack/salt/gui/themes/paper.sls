@@ -1,5 +1,5 @@
-numix-gtk-theme:
+paper-icon-theme:
   pkg.installed:
-    - name: numix-gtk-theme
+    - name: paper-icon-theme
     - require:
       - pkg: xorg-server

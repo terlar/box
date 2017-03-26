@@ -1,0 +1,9 @@
+Section "InputClass"
+	Identifier "Keyboard Defaults"
+	MatchIsKeyboard "on"
+
+	Option "XkbLayout" "{{ config.get('layout', 'us') }}"
+{%- if config.get('caps_ctrl', True) %}
+	Option "XKbOptions" "ctrl:nocaps"
+{%- endif%}
+EndSection
