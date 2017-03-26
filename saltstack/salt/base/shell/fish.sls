@@ -2,3 +2,6 @@
 fish:
   pkg.installed
 {%- endif %}
+
+fish-plug:
+  pkg.installed
