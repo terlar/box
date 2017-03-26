@@ -71,4 +71,18 @@ users_{{ name }}_user:
       {% for group in user.get('groups', []) -%}
       - group: {{ group }}
       {% endfor %}
+
+{% if user.get('createhome', True) %}
+{% for directory in user.get('directories', []) %}
+users_{{ name }}_{{ directory }}_directory:
+  file.directory:
+    - name: {{ home }}/{{ directory }}
+    - user: {{ user.get('homedir_owner', name) }}
+    - group: {{ user.get('homedir_group', user_group) }}
+    - mode: {{ user.get('user_dir_mode', '0750') }}
+    - require:
+      - user: users_{{ name }}_user
+      - group: {{ user_group }}
+{% endfor %}
+{%- endif %}
 {% endfor %}
