@@ -7,7 +7,7 @@ base:
   'roles:workstation':
     - match: grain
     - workstation
-  'blackbird.*':
+  'blackbird*':
     - dell-xps
-  'falcon.*':
+  'falcon*':
     - macbook
