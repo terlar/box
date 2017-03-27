@@ -8,7 +8,18 @@ include:
     - group: root
     - mode: 664
 
-add_modprobe_file_to_mkinitcpio:
+mkinitcpio_modules:
+  # This would be much nicer as an ini.options_present, but currently it
+  # is broken and don't allow us to edit files without adding spaces
+  # between the equal signs.
+  # See: https://github.com/saltstack/salt/issues/33669
+  file.replace:
+    - name: /etc/mkinitcpio.conf
+    - pattern: '(?<=^MODULES=)(".*")'
+    - repl: '"intel_agp i915"'
+    - unless: grep 'intel_agp i915' /etc/mkinitcpio.conf
+
+mkinitcpio_modprobe_file:
   # This would be much nicer as an ini.options_present, but currently it
   # is broken and don't allow us to edit files without adding spaces
   # between the equal signs.
@@ -20,7 +31,11 @@ add_modprobe_file_to_mkinitcpio:
     - unless: grep '/etc/modprobe.d/modprobe.conf' /etc/mkinitcpio.conf
     - require:
       - file: /etc/modprobe.d/modprobe.conf
+
+update_mkinitcpio:
   cmd.run:
     - name: mkinitcpio -p linux
     - onchanges:
-      - file: add_modprobe_file_to_mkinitcpio
+      - file: mkinitcpio_modules
+      - file: mkinitcpio_modprobe_file
+      - file: /etc/modprobe.d/modprobe.conf
