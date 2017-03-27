@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+w -hs | grep ':[0-9]\W' | head -1 | awk '{print $(1),$NF}' | while read user cmd; do
+	x_pid=$(pgrep -xou "$user" dbus-daemon)
+	x_env="/proc/$x_pid/environ"
+
+	if [ -f "$x_env" ]; then
+		export $(grep -z DISPLAY $x_env)
+		export $(grep -z XAUTHORITY $x_env)
+	fi
+
+	su "$user" -c 'i3lock -i ~/pictures/lock.png -c 000000'
+done

@@ -1,0 +1,2 @@
+event=cd/next
+action=/etc/acpi/handlers/cd next

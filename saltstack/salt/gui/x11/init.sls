@@ -10,7 +10,6 @@ x11_base_packages:
       - xdg-utils
       - xdotool
       - xfce4-notifyd
-      - xorg-server-utils
       - xorg-utils
       - xorg-xkill
       - xsel

@@ -1,4 +1,5 @@
 include:
+  - acpi
   - hardware/touchpad/generic
 
 /etc/modprobe.d/modprobe.conf:

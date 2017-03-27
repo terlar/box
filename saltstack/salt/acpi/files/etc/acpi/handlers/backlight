@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+step=10
+
+case $1 in
+	-) xbacklight -dec "${step}";;
+	+) xbacklight -inc "${step}";;
+esac

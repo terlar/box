@@ -21,4 +21,5 @@ audio_packages:
   pkg.installed:
     - pkgs:
       - moc
+      - playerctl
       - spotify

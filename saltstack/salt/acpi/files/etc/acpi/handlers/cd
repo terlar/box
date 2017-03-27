@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+case $1 in
+	play) cmd='mpc toggle; mocp --toggle-pause; playerctl play-pause';;
+	next) cmd='mpc next; mocp --next; playerctl next';;
+	prev) cmd='mpc prev; mocp --previous; playerctl previous';;
+	*) exit;;
+esac
+
+for user in $(w -h | awk '{print $1}' | uniq); do
+	dbus_pid=$(pgrep -xou "$user" dbus-daemon)
+	dbus_env="/proc/$dbus_pid/environ"
+	if [ -f "$dbus_env" ]; then
+		export $(grep -z DBUS_SESSION_BUS_ADDRESS $dbus_env)
+	fi
+
+	su "$user" -c "$cmd"
+done

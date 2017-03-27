@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+step=5
+
+case $1 in
+	-) cmd="amixer -- sset Master $step%- unmute";;
+	+) cmd="amixer -- sset Master $step%+ unmute";;
+	toggle) cmd="amixer -- sset Master toggle";;
+esac
+
+for user in $(w -h | awk '{print $1}' | uniq); do
+	pulse_pid=$(pgrep -xou "$user" pulseaudio)
+	pulse_env="/proc/$pulse_pid/environ"
+	if [ -f "$pulse_env" ]; then
+		export $(grep -z XDG_RUNTIME_DIR $pulse_env)
+	fi
+
+	su "$user" -c "$cmd"
+done
