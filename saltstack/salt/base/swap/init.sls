@@ -3,7 +3,6 @@ systemd-swap:
   service.running:
     - enable: True
     - watch:
-      - pkg: systemd-swap
       - ini: /etc/systemd/swap.conf
 
 swap_enable_zram:

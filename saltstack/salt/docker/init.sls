@@ -3,7 +3,6 @@ docker:
   service.running:
     - enable: True
     - watch:
-      - pkg: docker
       - file: /etc/systemd/system/docker.service.d/override.conf
 
 docker-compose:
