@@ -1,6 +1,7 @@
 include:
   - acpi
   - hardware/touchpad/generic
+  - hardware/video/intel
 
 /etc/modprobe.d/modprobe.conf:
   file.managed:
