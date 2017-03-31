@@ -99,6 +99,7 @@ dev:
     - python
     - ruby
     - rust
+    - scala
     - web
   packages:
     - aws-cli
