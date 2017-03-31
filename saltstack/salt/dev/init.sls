@@ -28,6 +28,9 @@ dev_packages:
 {% for pkg in salt['pillar.get']('dev:packages', []) %}
       - {{ pkg }}
 {%- endfor %}
+  npm.installed:
+    - pkgs:
+      - jwt-cli
 
 {%- if salt['pillar.get']('languages') %}
 include:
