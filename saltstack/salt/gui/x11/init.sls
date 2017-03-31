@@ -12,6 +12,7 @@ x11_base_packages:
       - xfce4-notifyd
       - xorg-utils
       - xorg-xkill
+      - xorg-xrdb
       - xsel
       - zenity
     - require:
