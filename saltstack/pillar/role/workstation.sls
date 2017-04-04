@@ -37,23 +37,27 @@ users:
     kubeadm_user: True
     rust_user: True
 
+
+repo_keys:
+  - 89AF679B037E1D2A
+
 repos:
   - name: base
-    server: https://s3.eu-central-1.amazonaws.com/yak-packages/base
+    server: https://s3.eu-central-1.amazonaws.com/yak-packages/$repo/os/$arch
   - name: communication
-    server: https://s3.eu-central-1.amazonaws.com/yak-packages/communication
+    server: https://s3.eu-central-1.amazonaws.com/yak-packages/$repo/os/$arch
   - name: development
-    server: https://s3.eu-central-1.amazonaws.com/yak-packages/development
+    server: https://s3.eu-central-1.amazonaws.com/yak-packages/$repo/os/$arch
   - name: fonts
-    server: https://s3.eu-central-1.amazonaws.com/yak-packages/fonts
+    server: https://s3.eu-central-1.amazonaws.com/yak-packages/$repo/os/$arch
   - name: gui
-    server: https://s3.eu-central-1.amazonaws.com/yak-packages/gui
+    server: https://s3.eu-central-1.amazonaws.com/yak-packages/$repo/os/$arch
   - name: hardware
-    server: https://s3.eu-central-1.amazonaws.com/yak-packages/hardware
+    server: https://s3.eu-central-1.amazonaws.com/yak-packages/$repo/os/$arch
   - name: media
-    server: https://s3.eu-central-1.amazonaws.com/yak-packages/media
+    server: https://s3.eu-central-1.amazonaws.com/yak-packages/$repo/os/$arch
   - name: terminal
-    server: https://s3.eu-central-1.amazonaws.com/yak-packages/terminal
+    server: https://s3.eu-central-1.amazonaws.com/yak-packages/$repo/os/$arch
 
 grep: ripgrep
 

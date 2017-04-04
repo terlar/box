@@ -3,6 +3,6 @@ CleanMethod = KeepCurrent
 CacheDir = /var/cache/pacman/pkg
 {% for repo in repos %}
 [{{ repo.name }}]
-SigLevel = Optional TrustAll
+SigLevel = PackageRequired
 Server = {{ repo.server }}
 {% endfor %}
