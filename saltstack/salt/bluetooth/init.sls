@@ -6,7 +6,6 @@ bluez:
 bluetooth_packages:
   pkg.installed:
     - pkgs:
-      - blueproximity
       - bluez-utils
     - require:
       - pkg: bluez
