@@ -4,6 +4,7 @@ java_dev_packages:
       - gradle
       - java-openjfx
       - javafx-scenebuilder
+      - jdee-server-git
       - jdk8-openjdk
       - junit
       - maven
