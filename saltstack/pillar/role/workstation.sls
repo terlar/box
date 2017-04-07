@@ -193,6 +193,7 @@ gui:
     - numix
     - paper
   packages:
+    - anki
     - autopass-git
     - cheese
     - deluge
