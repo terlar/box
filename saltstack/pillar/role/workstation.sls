@@ -82,6 +82,7 @@ fonts:
   - ttf-linux-libertine
   - ttf-symbola
   - ttf-tibetan-machine
+  - emojione-color-font
 
 vcs:
   - git
