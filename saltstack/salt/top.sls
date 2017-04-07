@@ -1,6 +1,9 @@
 base:
   '*':
     - common
+  'roles:chinese':
+    - match: grain
+    - chinese
   'roles:console':
     - match: grain
     - console
