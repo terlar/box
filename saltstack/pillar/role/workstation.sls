@@ -196,6 +196,7 @@ gui:
     - cheese
     - deluge
     - font-manager
+    - franz-bin
     - gcolor2
     - goldendict
     - i3lock
