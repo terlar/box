@@ -1,6 +1,7 @@
 include:
   - acpi
   - powertop
+  - hardware/ssd
   - hardware/touchpad/generic
   - hardware/video/intel
 
