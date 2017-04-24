@@ -9,6 +9,7 @@ java_dev_packages:
       - jdk8-openjdk
       - junit
       - maven
+      - openjdk8-src
 
 # Let IntelliJ track changes via inotify for larger projects without
 # falling back to recursive scans of directory trees.
