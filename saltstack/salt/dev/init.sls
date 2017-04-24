@@ -3,6 +3,7 @@ dev_packages:
     - pkgs:
       - autoconf
       - automake
+      - editorconfig-core-c
       - binutils
       - bison
       - diffutils
@@ -30,6 +31,7 @@ dev_packages:
 {%- endfor %}
   npm.installed:
     - pkgs:
+      - editorconfig-cli
       - jwt-cli
 
 {%- if salt['pillar.get']('languages') %}
