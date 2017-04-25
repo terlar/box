@@ -37,6 +37,17 @@ users:
     kubeadm_user: True
     rust_user: True
 
+mirrors:
+  limit: 100
+  count: 5
+  protocols:
+    - https
+  countries:
+    - Sweden
+    - Norway
+    - Denmark
+    - Finland
+    - Germany
 
 repo_keys:
   - 89AF679B037E1D2A

@@ -5,7 +5,16 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/reflector --protocol https --latest 30 --number {{ count }} --sort rate --save /etc/pacman.d/mirrorlist
+ExecStart=/usr/bin/reflector --save /etc/pacman.d/mirrorlist\
+{%- for protocol in config.get('protocols', ['http', 'https']) %}
+ --protocol {{ protocol }}\
+{%- endfor %}
+{%- for country in config.get('countries', []) %}
+ --country {{ country }}\
+{%- endfor %}
+ --latest {{ config.get('limit', 200) }}\
+ --number {{ config.get('count', 5) }}\
+ --sort {{ config.get('sort', 'rate') }}
 
 [Install]
 RequiredBy=multi-user.target

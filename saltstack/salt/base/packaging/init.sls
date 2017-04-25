@@ -23,7 +23,7 @@ packaging_tools:
     - mode: 664
     - template: jinja
     - defaults:
-        count: 5
+        config: {{ salt['pillar.get']('mirrors', {}) }}
 
 reflector:
   service.enabled:
