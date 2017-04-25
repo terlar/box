@@ -1,6 +1,3 @@
-machine_packages:
-  - linux-macbook
-
 hardware:
   audio: intel
   touchpad: mtrack
