@@ -15,6 +15,21 @@ packaging_tools:
       - reflector
       - repose
 
+/etc/systemd/system/reflector.service:
+  file.managed:
+    - source: salt://base/packaging/files/etc/systemd/system/reflector.service.jinja
+    - user: root
+    - group: root
+    - mode: 664
+    - template: jinja
+    - defaults:
+        count: 5
+
+reflector:
+  service.enabled:
+    - watch:
+      - file: /etc/systemd/system/reflector.service
+
 build_group_sudo:
   file.managed:
     - name: /etc/sudoers.d/50-build

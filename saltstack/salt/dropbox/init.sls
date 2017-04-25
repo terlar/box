@@ -13,6 +13,5 @@ dropbox:
 
 # Enable dropbox for user.
 dropbox@{{ name }}:
-  service.running:
-    - enable: True
+  service.enabled: []
 {% endfor %}
