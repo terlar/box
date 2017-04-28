@@ -14,7 +14,6 @@ yubikey_smartcard_packages:
       - pcsc-tools
 
 pcscd:
-  service.running:
-    - enable: True
+  service.enabled:
     - require:
       - pkg: yubikey_smartcard_packages
