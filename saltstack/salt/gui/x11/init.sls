@@ -11,6 +11,7 @@ x11_base_packages:
       - xdotool
       - xfce4-notifyd
       - xorg-utils
+      - xorg-xhost
       - xorg-xkill
       - xorg-xrdb
       - xsel
