@@ -3,6 +3,7 @@ diagnostics_packages:
     - pkgs:
       - cpupower
       - dfc
+      - dmidecode
       - glances
       - htop
       - httping

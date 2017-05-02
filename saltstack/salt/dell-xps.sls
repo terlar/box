@@ -5,6 +5,9 @@ include:
   - hardware/touchpad/generic
   - hardware/video/intel
 
+fwupd:
+  pkg.installed
+
 /etc/modprobe.d/modprobe.conf:
   file.managed:
     - source: salt://dell-xps/files/etc/modprobe.d/modprobe.conf
