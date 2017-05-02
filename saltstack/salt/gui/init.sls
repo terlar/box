@@ -9,6 +9,10 @@ gui_packages:
 {% for pkg in salt['pillar.get']('gui:packages', []) %}
       - {{ pkg }}
 {%- endfor %}
+  npm.installed:
+    - pkgs:
+      - electron
+      - electron-open-url
 
 /usr/share/backgrounds:
   file.recurse:
