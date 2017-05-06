@@ -33,6 +33,7 @@ dev_packages:
     - pkgs:
       - editorconfig-cli
       - jwt-cli
+      - wscat
 
 {%- if salt['pillar.get']('languages') %}
 include:
