@@ -124,6 +124,7 @@ dev:
     - exercism-cli
     - ftjam
     - gdb
+    - global
     - http-prompt
     - httpie
     - jq
@@ -131,6 +132,7 @@ dev:
     - mycli
     - packer-io
     - plantuml
+    - python-pygments
     - tmate
     - vagrant
     - vegeta
