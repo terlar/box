@@ -1,6 +1,7 @@
 java_dev_packages:
   pkg.installed:
     - pkgs:
+      - beanshell
       - gradle
       - intellij-idea-community-edition
       - java-openjfx
