@@ -125,6 +125,7 @@ dev:
     - ftjam
     - gdb
     - global
+    - harcurl
     - http-prompt
     - httpie
     - jq
