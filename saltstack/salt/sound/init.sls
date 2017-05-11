@@ -15,6 +15,9 @@ pulseaudio:
 {% if 'dlna' in salt['pillar.get']('sound:features', []) %}
       - pulseaudio-dlna
 {% endif %}
+{% if 'bluetooth' in salt['pillar.get']('sound:features', []) %}
+      - pulseaudio-bluetooth
+{% endif %}
 
 {% if salt['pillar.get']('gui:enabled', False) %}
 pulseaudio_gui_packages:

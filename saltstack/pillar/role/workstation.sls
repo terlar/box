@@ -255,6 +255,7 @@ filesystems:
 sound:
   enabled: True
   features:
+    - bluetooth
     - dlna
 
 bluetooth:
