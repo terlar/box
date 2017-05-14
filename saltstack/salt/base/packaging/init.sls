@@ -8,7 +8,7 @@ packaging_tools:
       - devtools
       - downgrader
       - findutils
-      - guzuta-git
+      - guzuta
       - pacutils
       - pkgbuild-introspection
       - pkgfile
