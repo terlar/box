@@ -74,7 +74,7 @@ grep: ripgrep
 
 editors:
   - neovim
-  - remacs
+  - emacs
 
 terminals:
   - st
