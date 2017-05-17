@@ -5,7 +5,11 @@ javascript_dev_packages:
       - npm
   npm.installed:
     - pkgs:
-      - tern
-      - gulp
+      - "@angular/cli"
       - bower
+      - eslint
+      - gulp
+      - jshint
+      - tern
+      - wscat
       - wt-cli
