@@ -1,2 +1,5 @@
 qutebrowser:
-  pkg.installed
+  pkg.installed:
+    - pkgs:
+      - qutebrowser
+      - qt5-webengine
