@@ -83,6 +83,7 @@ terminals:
 browsers:
   - chromium
   - qutebrowser
+  - uzbl
 
 fonts:
   - noto-fonts

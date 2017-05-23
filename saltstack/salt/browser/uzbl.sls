@@ -1,0 +1,2 @@
+uzbl-browser:
+  pkg.installed
