@@ -3,3 +3,4 @@ haskell_dev_packages:
     - pkgs:
       - ghc
       - ghc-mod
+      - stack
