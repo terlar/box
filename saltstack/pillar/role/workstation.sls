@@ -36,6 +36,10 @@ users:
     dropbox_user: True
     kubeadm_user: True
     rust_user: True
+    stack_packages:
+      - intero
+      - structured-haskell-mode
+      - stylish-haskell
 
 mirrors:
   limit: 100
