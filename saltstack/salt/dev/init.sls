@@ -35,8 +35,14 @@ dev_packages:
       - jwt-cli
       - wscat
 
-{%- if salt['pillar.get']('languages') %}
 include:
+{%- if salt['pillar.get']('dev:tools') %}
+{% for tool in salt['pillar.get']('dev:tools', []) %}
+  - .{{ tool }}
+{%- endfor %}
+{%- endif %}
+
+{%- if salt['pillar.get']('dev:languages') %}
 {% for language in salt['pillar.get']('dev:languages', []) %}
   - .{{ language }}
 {%- endfor %}

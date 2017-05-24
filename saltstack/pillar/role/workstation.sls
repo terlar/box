@@ -109,6 +109,8 @@ cm:
   - salt
 
 dev:
+  tools:
+    - packer
   languages:
     - bash
     - elixir
@@ -136,7 +138,6 @@ dev:
     - jq
     - mosh
     - mycli
-    - packer-io
     - plantuml
     - python-pygments
     - tmate
