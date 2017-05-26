@@ -99,6 +99,12 @@ fonts:
   - ttf-symbola
   - ttf-tibetan-machine
   - emojione-color-font
+  - ttf-font-awesome
+  - ttf-material-design-icons
+  - ttf-weather-icons
+  - ttf-octicons
+  - ttf-atom-file-icons
+  - ttf-all-the-icons
 
 vcs:
   - git
