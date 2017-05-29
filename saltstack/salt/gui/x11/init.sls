@@ -4,9 +4,9 @@ xorg-server:
 x11_base_packages:
   pkg.installed:
     - pkgs:
+      - compton
       - xcape
       - xclip
-      - xcompmgr
       - xdg-utils
       - xdotool
       - xfce4-notifyd
