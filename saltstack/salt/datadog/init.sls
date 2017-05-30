@@ -47,16 +47,17 @@ datadog-agent:
     - enable: True
     - watch:
       - file: /usr/lib/systemd/system/datadog-agent.service
-      - file: /opt/datadog-agent/agent/conf.d/docker_daemon.yaml
+      - file: /opt/datadog-agent/agent/conf.d
     - require:
       - file: /usr/lib/systemd/system/datadog-agent.service
 
-/opt/datadog-agent/agent/conf.d/docker_daemon.yaml:
-  file.managed:
-    - source: salt://datadog/files/opt/datadog-agent/agent/conf.d/docker_daemon.yaml
+/opt/datadog-agent/agent/conf.d:
+  file.recurse:
+    - source: salt://datadog/files/opt/datadog-agent/agent/conf.d
     - user: dd-agent
     - group: dd-agent
-    - mode: 664
+    - dir_mode: 2775
+    - file_mode: '0644'
     - makedirs: True
     - require:
       - cmd: /opt/datadog-agent/setup_agent.sh

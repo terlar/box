@@ -1,0 +1,15 @@
+init_config:
+  # pid_cache_duration: 120
+
+instances:
+  - name: xorg
+    search_string: ['Xorg']
+
+  - name: browser
+    search_string: ['QtWebEngineProcess', 'WebKitWebProcess']
+
+  - name: emacs
+    search_string: ['emacs', 'emacsclient']
+
+  - name: franz
+    search_string: ['Franz']
