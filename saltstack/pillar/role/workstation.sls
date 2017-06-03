@@ -92,6 +92,9 @@ browsers:
 fonts:
   - noto-fonts
   - ttf-dejavu
+  - ttf-fira-code
+  - ttf-fira-mono
+  - ttf-fira-sans
   - ttf-freefont
   - ttf-indic-otf
   - ttf-liberation
