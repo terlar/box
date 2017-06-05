@@ -1,5 +1,6 @@
 include:
   - base
+  - filesystem
   - gnupg
   - dotfiles
   - editor
