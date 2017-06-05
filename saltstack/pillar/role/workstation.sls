@@ -267,6 +267,7 @@ disk_encryption: True
 filesystems:
   - exfat
   - ext
+  - fat
   - ntfs
   - tmsu
 
