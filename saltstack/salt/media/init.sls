@@ -14,7 +14,7 @@ image_packages:
       - exiv2
       - feh
       - gpicview
-      - pinta
+      - mypaint
       - shotwell
 
 audio_packages:
