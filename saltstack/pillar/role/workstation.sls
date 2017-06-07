@@ -239,6 +239,7 @@ gui:
     - libreoffice-fresh
     - lightdm
     - lightdm-gtk-greeter
+    - maim
     - meld
     - nautilus
     - pidgin
