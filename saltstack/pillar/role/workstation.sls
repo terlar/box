@@ -6,7 +6,7 @@ keyboard:
   layout: us
   caps_ctrl: True
   repeat_delay: 200
-  repeat_rate: 10
+  repeat_rate: 25
 
 users:
   terje:
