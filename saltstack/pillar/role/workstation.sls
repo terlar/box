@@ -111,6 +111,8 @@ fonts:
   - ttf-octicons
   - ttf-atom-file-icons
   - ttf-all-the-icons
+  - ttf-icomoon
+  - ttf-mfizz
 
 vcs:
   - git
