@@ -11,3 +11,7 @@ git_tools:
       - tig
     - require:
       - pkg: git
+  npm.installed:
+    - pkgs:
+      - github-org-repos
+      - github-user-repos
