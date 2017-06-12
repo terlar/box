@@ -76,9 +76,6 @@ repos:
 
 grep: ripgrep
 
-emacs:
-  gui: lucid
-
 editors:
   - neovim
   - emacs
