@@ -5,5 +5,6 @@ erlang_purge_conflicting_packages:
 erlang_dev_packages:
   pkg.installed:
     - pkgs:
+      - distel
       - erlang-nox
       - rebar3
