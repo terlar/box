@@ -1,0 +1,9 @@
+init_config:
+
+instances:
+  - use_mount: no
+    excluded_filesystems:
+      - fuse.gvfsd-fuse
+      - tmpfs
+      - tracefs
+    excluded_mountpoint_re: /home/docker/*
