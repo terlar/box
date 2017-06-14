@@ -1,6 +1,7 @@
 datadog_packages:
   pkg.installed:
     - pkgs:
+      - gohai-git
       - sysstat
 
 datadog_user:
