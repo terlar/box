@@ -3,3 +3,6 @@ go_dev_packages:
     - pkgs:
       - go
       - go-tools
+      - gocode-git
+      - godef-git
+      - gore-git
