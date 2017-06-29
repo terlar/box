@@ -5,7 +5,6 @@ x11_base_packages:
   pkg.installed:
     - pkgs:
       - compton
-      - xcape
       - xclip
       - xdg-utils
       - xdotool
@@ -18,6 +17,16 @@ x11_base_packages:
       - zenity
     - require:
       - pkg: xorg-server
+
+x11_tools:
+  pkg.installed:
+    - pkgs:
+        # Screenshots
+        - maim
+        # Screen selection
+        - slop
+        # Combined ctrl/escape key
+        - xcape
 
 x11_display_packages:
   pkg.installed:
