@@ -197,6 +197,7 @@ terminal:
     - pandoc
     - pass
     - pdfgrep
+    - procmail
     - progress
     - pv
     - pwgen
