@@ -23,6 +23,6 @@ lightdm:
     - sections:
         greeter:
           background: /usr/share/backgrounds/sky-gradient.png
-          theme-name: Arc
+          theme-name: Arc-solid
           icon-theme-name: Paper
           font-name: Noto Sans 14
