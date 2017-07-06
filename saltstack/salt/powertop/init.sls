@@ -10,7 +10,7 @@ powertop:
     - makedirs: True
 
 powertop_service:
-  service.running:
+  service.enabled:
     - name: powertop
     - watch:
       - file: /etc/systemd/system/powertop.service
