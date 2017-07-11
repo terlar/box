@@ -6,3 +6,4 @@ go_dev_packages:
       - gocode-git
       - godef-git
       - gore-git
+      - gotpl-git
