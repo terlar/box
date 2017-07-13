@@ -21,6 +21,7 @@ dev_packages:
       - m4
       - make
       - patch
+      - remake
       - sed
       - texinfo
       - time
