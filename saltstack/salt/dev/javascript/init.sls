@@ -18,7 +18,8 @@ javascript_code_tools:
   npm.installed:
     - pkgs:
       - eslint
-      - jshint
+      - eslint-plugin-import
+      - eslint-config-airbnb-base
       - tern
 
 "@angular/cli@1.0.4":
