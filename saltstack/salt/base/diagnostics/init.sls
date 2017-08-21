@@ -17,6 +17,9 @@ diagnostics_packages:
       - powertop
       - sysdig
       - usbutils
+  npm.installed:
+    - pkgs:
+      - gtop
 
 {% if salt['pillar.get']('gui:enabled', False) %}
 diagnostics_gui_packages:
