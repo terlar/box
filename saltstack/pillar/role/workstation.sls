@@ -144,6 +144,7 @@ dev:
     - gdb
     - global
     - harcurl
+    - hey-git
     - http-prompt
     - httpie
     - jq
