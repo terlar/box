@@ -1,0 +1,2 @@
+afpfs-ng:
+  pkg.installed

@@ -265,10 +265,12 @@ passwordless_sudo:
 disk_encryption: True
 
 filesystems:
+  - afp
   - exfat
   - ext
   - fat
   - ntfs
+  - ssh
   - tmsu
 
 sound:
