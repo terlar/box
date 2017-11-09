@@ -34,6 +34,7 @@ dev_packages:
     - pkgs:
       - editorconfig-cli
       - jwt-cli
+      - mad
       - wscat
 
 include:
