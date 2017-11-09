@@ -154,11 +154,13 @@ dev:
     - mycli
     - plantuml
     - python-pygments
+    - the_silver_searcher
     - tmate
     - vagrant
     - vegeta
     - virtualbox
     - wercker-cli
+    - zeal
 
 network:
   features:
