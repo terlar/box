@@ -5,8 +5,10 @@ javascript_dev_packages:
       - npm
   npm.installed:
     - pkgs:
+      - javascript-typescript-langserver
       - wscat
       - wt-cli
+      - yarn
 
 javascript_build_tools:
   npm.installed:
@@ -21,6 +23,4 @@ javascript_code_tools:
       - eslint-plugin-import
       - eslint-config-airbnb-base
       - tern
-
-"@angular/cli@1.0.4":
-  npm.installed: []
+      - trepanjs
