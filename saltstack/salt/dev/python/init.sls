@@ -4,7 +4,7 @@ python_dev_packages:
       - autopep8
       - flake8
       - python-importmagic
-      - python-jedi
+      - python-language-server
       - python-pip
       - python-pytest
       - python2-pip
