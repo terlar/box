@@ -8,6 +8,7 @@ java_dev_packages:
       - javafx-scenebuilder
       - jdee-server-git
       - jdk8-openjdk
+      - jdt-language-server
       - junit
       - maven
       - openjdk8-src
