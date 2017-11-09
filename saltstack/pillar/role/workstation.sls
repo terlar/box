@@ -7,6 +7,8 @@ keyboard:
   caps_ctrl: True
   repeat_delay: 200
   repeat_rate: 25
+display:
+  dpi: 166
 
 users:
   terje:

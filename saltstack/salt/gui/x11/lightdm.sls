@@ -15,6 +15,7 @@ lightdm:
     - makedirs: True
     - template: jinja
     - defaults:
+        dpi: {{ salt['pillar.get']('display:dpi', 96) }}
         ar_delay: {{ salt['pillar.get']('keyboard:repeat_delay', 200) }}
         ar_rate: {{ salt['pillar.get']('keyboard:repeat_rate', 62) }}
 
