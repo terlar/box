@@ -4,6 +4,7 @@ include:
   - hardware/ssd
   - hardware/touchpad/generic
   - hardware/video/intel
+  - hardware/printer
 
 fwupd:
   pkg.installed
