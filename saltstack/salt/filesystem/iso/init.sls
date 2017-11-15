@@ -1,0 +1,2 @@
+fuseiso:
+  pkg.installed

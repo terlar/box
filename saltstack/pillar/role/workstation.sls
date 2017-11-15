@@ -274,6 +274,7 @@ filesystems:
   - exfat
   - ext
   - fat
+  - iso
   - ntfs
   - ssh
   - tmsu
