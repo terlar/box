@@ -123,6 +123,7 @@ cm:
 
 dev:
   tools:
+    - database
     - packer
   languages:
     - bash
