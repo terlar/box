@@ -193,6 +193,7 @@ terminal:
     - exa-git
     - figlet
     - fzf
+    - fzy
     - grc
     - icat
     - lastpass-cli
