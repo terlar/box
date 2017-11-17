@@ -128,6 +128,7 @@ dev:
   languages:
     - bash
     - elixir
+    - elm
     - erlang
     - go
     - haskell
