@@ -3,5 +3,4 @@ database_dev_packages:
     - pkgs:
       - mariadb-clients
       - mongodb-tools
-      - postgres
       - sqlite

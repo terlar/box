@@ -2,7 +2,6 @@ haskell_dev_packages:
   pkg.installed:
     - pkgs:
       - ghc
-      - ghc-mod
       - stack
 
 {% for name, user in salt['pillar.get']('users', {}).items() %}
