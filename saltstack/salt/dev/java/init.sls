@@ -5,6 +5,7 @@ java_dev_packages:
       - gradle
       - intellij-idea-community-edition
       - java-openjfx
+      - java-repl-git
       - javafx-scenebuilder
       - jdee-server-git
       - jdk8-openjdk

@@ -179,6 +179,7 @@ network:
     - openssh
     - openssl
     - rsync
+    - pssh
     - socat
     - tcpdump
     - traceroute
@@ -212,11 +213,15 @@ terminal:
     - pwgen
     - pygmentize
     - ranger
+    - recordmydesktop
     - reptyr
     - rlwrap
+    - speedread-git
     - tabview
     - translate-shell
     - tree
+    - ttygif
+    - ttyrec
     - units
     - unrtf
     - w3m
