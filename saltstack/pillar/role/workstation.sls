@@ -94,6 +94,7 @@ browsers:
 fonts:
   - noto-fonts
   - ttf-dejavu
+  - ttf-fantasque-sans
   - ttf-fira-code
   - ttf-fira-mono
   - ttf-fira-sans
