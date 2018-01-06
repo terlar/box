@@ -3,7 +3,6 @@ rust_dev_packages:
     - pkgs:
       - rust-racer
       - rust-src
-      - rustfmt
       - rustup
 
 {% for name, user in salt['pillar.get']('users', {}).items()
