@@ -163,6 +163,7 @@ dev:
     - vegeta
     - virtualbox
     - wercker-cli
+    - yamllint
     - zeal
 
 network:
