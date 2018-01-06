@@ -3,4 +3,3 @@ printer_packages:
     - pkgs:
       - cups
       - gutenprint
-      - gtk3-print-backends
