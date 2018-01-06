@@ -220,6 +220,7 @@ terminal:
     - rlwrap
     - speedread-git
     - tabview
+    - tldr
     - translate-shell
     - tree
     - ttygif
