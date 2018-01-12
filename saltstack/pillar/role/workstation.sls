@@ -128,6 +128,7 @@ dev:
     - packer
   languages:
     - bash
+    - crystal
     - elixir
     - elm
     - erlang
