@@ -47,9 +47,9 @@ wpa_supplicant@{{ interface }}:
     - require:
       - pkg: sudo
 
-/usr/bin/protect-wpa_supplicant:
+/usr/bin/wpa_save:
   file.managed:
-    - source: salt://base/network/files/usr/bin/protect-wpa_supplicant
+    - source: salt://base/network/files/usr/bin/wpa_save
     - user: root
     - group: root
     - mode: 755

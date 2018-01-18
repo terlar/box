@@ -1,1 +1,1 @@
-%wheel ALL = (root) NOPASSWD: /usr/bin/protect-wpa_supplicant
+%wheel ALL = (root) NOPASSWD: /usr/bin/chmod 400 /etc/wpa_supplicant/*.conf
