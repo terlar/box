@@ -36,3 +36,20 @@ wpa_supplicant@{{ interface }}:
         - fast_reauth=1
 {% endif %}
 {% endfor %}
+
+/etc/sudoers.d/wpa_supplicant:
+  file.managed:
+    - source: salt://base/network/files/etc/sudoers.d/wpa_supplicant
+    - user: root
+    - group: root
+    - mode: 440
+    - check_cmd: /usr/sbin/visudo -c -f
+    - require:
+      - pkg: sudo
+
+/usr/bin/protect-wpa_supplicant:
+  file.managed:
+    - source: salt://base/network/files/usr/bin/protect-wpa_supplicant
+    - user: root
+    - group: root
+    - mode: 755
