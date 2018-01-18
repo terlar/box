@@ -10,3 +10,4 @@ python_dev_packages:
       - python-pip
       - python-pytest
       - python2-pip
+      - tk
