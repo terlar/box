@@ -1,8 +1,4 @@
+{%- if salt['pkg.version']("emacs-git") == "" %}
 emacs:
-  pkg.installed:
-    - name: emacs
-
-emacs_packages:
-  pkg.installed:
-    - pkgs:
-      - cask
+  pkg.installed
+{%- endif %}

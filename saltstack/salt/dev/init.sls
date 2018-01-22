@@ -30,12 +30,19 @@ dev_packages:
 {% for pkg in salt['pillar.get']('dev:packages', []) %}
       - {{ pkg }}
 {%- endfor %}
+
+{% for name, user in salt['pillar.get']('users', {}).items() %}
+dev_npm_packages_for_user_{{ name }}:
   npm.installed:
+    - user: {{ name }}
+    - env:
+        NPM_CONFIG_PREFIX: ~/.npm-global
     - pkgs:
       - editorconfig-cli
       - jwt-cli
       - mad
       - wscat
+{% endfor %}
 
 include:
 {%- if salt['pillar.get']('dev:tools') %}
