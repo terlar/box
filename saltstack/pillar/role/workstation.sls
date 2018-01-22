@@ -136,6 +136,7 @@ dev:
     - haskell
     - java
     - javascript
+    - kotlin
     - lua
     - python
     - ruby
