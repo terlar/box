@@ -93,6 +93,7 @@ browsers:
 
 fonts:
   - noto-fonts
+  - otf-stix
   - ttf-dejavu
   - ttf-fantasque-sans
   - ttf-fira-code
